@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading… — Medal & More</title>
+<meta name="description" content="Read the latest Olympic sports news, athlete stories and in-depth coverage on Medal & More.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥇</text></svg>">
+<style>
+.post-wrap{max-width:760px;margin:0 auto;padding:calc(var(--nav-height)+56px) 24px 96px}
+.post-back{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;color:var(--text-muted);margin-bottom:32px;transition:color .2s;padding:6px 0}
+.post-back:hover{color:var(--gold)}
+.post-cat{font-size:.8125rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:block}
+.post-title{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;letter-spacing:-.03em;line-height:1.15;margin-bottom:20px}
+.post-meta{display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:.875rem;flex-wrap:wrap;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.post-meta-author{display:flex;align-items:center;gap:8px}
+.post-meta-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#d97706,#f97316);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0}
+.post-hero-img{border-radius:16px;overflow:hidden;margin-bottom:40px;border:1px solid var(--border)}
+.post-hero-img img{width:100%;height:auto;display:block;max-height:480px;object-fit:cover}
+.post-hero-img .hero-placeholder{height:280px;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:4rem}
+
+/* Post content styles */
+.post-body{font-size:1.075rem;line-height:1.85;color:var(--text-secondary)}
+.post-body h1,.post-body h2,.post-body h3{color:var(--text-primary);margin:2em 0 .6em;font-weight:800;letter-spacing:-.02em}
+.post-body h1{font-size:1.75rem}
+.post-body h2{font-size:1.375rem}
+.post-body h3{font-size:1.125rem}
+.post-body p{margin-bottom:1.5em}
+.post-body strong{color:var(--text-primary);font-weight:700}
+.post-body em{font-style:italic}
+.post-body a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.post-body a:hover{opacity:.8}
+.post-body blockquote{border-left:3px solid var(--gold);padding:4px 0 4px 20px;color:var(--text-muted);font-style:italic;margin:2em 0}
+.post-body code{background:rgba(255,255,255,.08);padding:2px 7px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:.88em}
+.post-body pre{background:#12121f;border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin-bottom:1.5em}
+.post-body pre code{background:none;padding:0;font-size:.9em}
+.post-body ul,.post-body ol{padding-left:26px;margin-bottom:1.5em}
+.post-body ul li{list-style:disc;margin-bottom:.4em}
+.post-body ol li{list-style:decimal;margin-bottom:.4em}
+.post-body hr{border:none;border-top:1px solid var(--border);margin:2.5em 0}
+.post-body img{border-radius:12px;margin:2em auto}
+
+/* Tags */
+.post-tags{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0}
+.post-tag{padding:5px 14px;border:1px solid var(--border);border-radius:999px;font-size:.8125rem;color:var(--text-muted);transition:all .2s}
+.post-tag:hover{border-color:rgba(251,191,36,.4);color:var(--gold)}
+
+/* Share */
+.share-bar{background:#12121f;border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;margin:40px 0}
+.share-bar h4{font-size:1rem;font-weight:700;margin-bottom:16px}
+.share-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.share-btn{padding:9px 20px;border-radius:8px;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text-secondary);transition:all .2s;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.share-btn:hover{border-color:rgba(251,191,36,.4);color:var(--gold);background:rgba(251,191,36,.06)}
+
+/* Related */
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:24px}
+.related-card{background:#12121f;border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .3s}
+.related-card:hover{border-color:rgba(251,191,36,.3);transform:translateY(-3px)}
+.related-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:2rem}
+.related-thumb img{width:100%;height:100%;object-fit:cover}
+.related-body{padding:14px}
+.related-cat{font-size:.75rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.related-title{font-size:.9rem;font-weight:700;line-height:1.35;color:var(--text-primary)}
+.not-found{text-align:center;padding:120px 24px}
+.not-found .nf-icon{font-size:4rem;margin-bottom:16px}
+.admin-edit-bar{position:fixed;bottom:20px;right:20px;z-index:50}
+.admin-edit-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:linear-gradient(135deg,#d97706,#f97316);color:#fff;border-radius:10px;font-size:.875rem;font-weight:700;box-shadow:0 4px 16px rgba(217,119,6,.4);cursor:pointer;border:none;font-family:inherit;transition:all .2s}
+.admin-edit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(217,119,6,.5)}
+</style>
+</head>
+<body>
+
+<header id="site-header" role="banner">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo"><span class="logo-icon">🥇</span><span>Medal<span class="logo-amp">&amp;</span>More</span></a>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="/#news">News</a></li>
+        <li><a href="/#medals">Medal Tally</a></li>
+        <li><a href="/#sports">Sports</a></li>
+        <li><a href="/#athletes">Athletes</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="/#newsletter" class="btn btn-primary btn-sm">Subscribe Free</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="post-wrap" id="post-container">
+    <div style="text-align:center;padding:80px 0;color:#64748b">Loading…</div>
+  </div>
+</main>
+
+<footer id="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Medal &amp; More · medalandmore.com</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Admin floating edit button -->
+<div class="admin-edit-bar" id="admin-edit-bar" style="display:none">
+  <button class="admin-edit-btn" id="admin-edit-btn">✏️ Edit Post</button>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+const POSTS_KEY = 'mam_posts';
+const AUTH_KEY  = 'mam_auth';
+
+function getPosts(){ return JSON.parse(localStorage.getItem(POSTS_KEY)||'[]'); }
+function escHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function markdownToHtml(md){
+  if(!md)return '';
+  return md
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^# (.+)$/gm,'<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/`(.+?)`/g,'<code>$1</code>')
+    .replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g,'<ul>$&</ul>')
+    .replace(/^\d+\. (.+)$/gm,'<li>$1</li>')
+    .replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/!\[(.+?)\]\((.+?)\)/g,'<img src="$2" alt="$1" loading="lazy">')
+    .replace(/^---$/gm,'<hr>')
+    .split('\n\n').map(block=>{
+      if(/^<[hbuo]|^<li|^<hr|^<block/.test(block.trim())) return block;
+      return block.trim() ? `<p>${block.trim()}</p>` : '';
+    }).join('\n');
+}
+
+function fmtDate(d){ if(!d)return ''; return new Date(d).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}); }
+function readTime(md){ return Math.max(1,Math.ceil((md||'').split(/\s+/).length/200)); }
+function categoryEmoji(c){const m={'Swimming':'🏊','Athletics':'🏃','Gymnastics':'🤸','Winter Sports':'⛷️','Team Sports':'⚽','Athletes':'🌟','Medal Tally':'🥇','India':'🇮🇳','Feature':'📰','Opinion':'💬','News':'📡'};return m[c]||'🏅';}
+
+async function renderPost(){
+  const params  = new URLSearchParams(location.search);
+  const id      = params.get('id');
+  const slug    = params.get('slug');
+  const posts   = getPosts();
+  const isAdmin = localStorage.getItem(AUTH_KEY)==='1';
+  const container = document.getElementById('post-container');
+
+  let post = posts.find(p=>(
+    (id && p.id===id) || (slug && (p.slug===slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')=== slug))
+  ) && (p.status==='published' || isAdmin));
+
+  // Fallback: try auto-drafts.json if not in localStorage
+  if(!post){
+    try {
+      const r = await fetch('./auto-drafts.json?t='+Date.now());
+      if(r.ok){
+        const arr = await r.json();
+        const match = arr.find(a=>{
+          const aSlug = a.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+          return (slug && aSlug===slug) || (id && (id===aSlug || id==='json_'+aSlug));
+        });
+        if(match){
+          const sl = match.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+          post = {id:'json_'+sl, slug:sl, title:match.title, content:match.content,
+            category:match.category||'News', tags:match.tags||[], metaDesc:match.metaDesc||'',
+            image:match.image||'', status:'published', visibility:'public',
+            publishedAt:new Date().toISOString(), createdAt:new Date().toISOString()};
+        }
+      }
+    } catch(e){}
+  }
+
+  if(!post){
+    document.title = '404 — Post Not Found | Medal & More';
+    container.innerHTML=`<div class="not-found"><div class="nf-icon">🥈</div><h1 style="font-size:2rem;margin-bottom:12px">404 — Post not found</h1><p style="color:#94a3b8;margin-bottom:32px">This article may have been removed or is still a draft.</p><a href="/blog.html" class="btn btn-primary">← Back to Blog</a></div>`;
+    return;
+  }
+
+  // Update page meta
+  document.title = `${post.title} — Medal & More`;
+  document.querySelector('meta[name="robots"]').content = post.status==='published' ? 'index,follow' : 'noindex';
+
+  // Related posts (same category, exclude current)
+  const related = posts.filter(p=>p.id!==post.id && p.status==='published' && p.category===post.category).slice(0,3);
+
+  // Share URL
+  const shareUrl = encodeURIComponent(location.href);
+  const shareTitle = encodeURIComponent(post.title);
+
+  container.innerHTML = `
+    <a href="/blog.html" class="post-back">← Back to Blog</a>
+
+    ${post.status!=='published'?`<div style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);border-radius:10px;padding:10px 16px;margin-bottom:20px;font-size:.875rem;color:#3b82f6">⚡ Preview mode — this post is <strong>${post.status}</strong> and not publicly visible.</div>`:''}
+
+    <span class="post-cat">${escHtml(post.category||'Olympics')}</span>
+    <h1 class="post-title">${escHtml(post.title)}</h1>
+
+    <div class="post-meta">
+      <div class="post-meta-author">
+        <div class="post-meta-avatar">A</div>
+        <span>Admin</span>
+      </div>
+      <span>·</span>
+      <span>${fmtDate(post.publishedAt||post.createdAt)}</span>
+      <span>·</span>
+      <span>${readTime(post.content)} min read</span>
+    </div>
+
+    ${post.image?`<div class="post-hero-img"><img src="${escHtml(post.image)}" alt="${escHtml(post.title)}" loading="eager"></div>`:`<div class="post-hero-img"><div class="hero-placeholder">${categoryEmoji(post.category)}</div></div>`}
+
+    <div class="post-body">${markdownToHtml(post.content)}</div>
+
+    ${post.tags&&post.tags.length?`<div class="post-tags">${post.tags.map(t=>`<span class="post-tag">#${escHtml(t)}</span>`).join('')}</div>`:''}
+
+    <div class="share-bar">
+      <h4>Share this article</h4>
+      <div class="share-buttons">
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}" target="_blank" rel="noopener">𝕏 Tweet</a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener">f Facebook</a>
+        <a class="share-btn" href="https://api.whatsapp.com/send?text=${shareTitle}%20${shareUrl}" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <button class="share-btn" onclick="copyLink()">🔗 Copy Link</button>
+      </div>
+    </div>
+
+    ${related.length?`
+    <div>
+      <h3 style="font-size:1.25rem;font-weight:800;margin-bottom:20px">More in ${escHtml(post.category||'Olympics')}</h3>
+      <div class="related-grid">
+        ${related.map(r=>`
+          <div class="related-card" onclick="location.href='post.html?slug=${r.slug||r.id}'">
+            <div class="related-thumb">${r.image?`<img src="${escHtml(r.image)}" alt="${escHtml(r.title)}" loading="lazy">`:`<span>${categoryEmoji(r.category)}</span>`}</div>
+            <div class="related-body">
+              <div class="related-cat">${escHtml(r.category||'')}</div>
+              <div class="related-title">${escHtml(r.title)}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`:''}
+  `;
+
+  // Admin edit button
+  if(localStorage.getItem(AUTH_KEY)==='1'){
+    const bar = document.getElementById('admin-edit-bar');
+    bar.style.display='block';
+    document.getElementById('admin-edit-btn').onclick=()=>{ location.href=`/admin.html`; };
+    bar.querySelector('button').onclick=()=>{ sessionStorage.setItem('mam_edit_id',post.id); location.href='/admin.html'; };
+  }
+}
+
+function copyLink(){
+  navigator.clipboard.writeText(location.href).then(()=>{
+    const btn=[...document.querySelectorAll('.share-btn')].find(b=>b.textContent.includes('Copy'));
+    if(btn){ btn.textContent='✅ Copied!'; setTimeout(()=>btn.textContent='🔗 Copy Link',2000); }
+  });
+}
+
+if(localStorage.getItem(AUTH_KEY)==='1' && sessionStorage.getItem('mam_edit_id')){
+  sessionStorage.removeItem('mam_edit_id');
+}
+
+renderPost().catch(console.error);
+</script>
+</body>
+</html>

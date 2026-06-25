@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block admin/private paths (if added later)
+Disallow: /api/
+Disallow: /.vercel/
+
+# Sitemap location
+Sitemap: https://www.medalandmore.com/sitemap.xml
+
+# Crawl delay (optional, polite for bots)
+Crawl-delay: 5

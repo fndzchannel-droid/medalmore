@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — Medal & More</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#080810;color:#e2e8f0;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font-family:inherit}
+img{max-width:100%;display:block}
+
+/* ─── VARS ─── */
+:root{
+  --bg:       #080810;
+  --bg2:      #0f0f1a;
+  --bg3:      #12121f;
+  --bg4:      #1a1a2e;
+  --border:   rgba(255,255,255,.08);
+  --border2:  rgba(255,255,255,.14);
+  --gold:     #fbbf24;
+  --gold-d:   #d97706;
+  --purple:   #8b5cf6;
+  --green:    #22c55e;
+  --red:      #ef4444;
+  --blue:     #3b82f6;
+  --orange:   #f97316;
+  --text:     #e2e8f0;
+  --text2:    #94a3b8;
+  --text3:    #64748b;
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-xl:24px;
+  --sidebar:240px;
+}
+
+/* ─── LOGIN ─── */
+#login-screen{
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;background:var(--bg);
+  position:fixed;inset:0;z-index:1000;
+}
+.login-box{
+  background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r-xl);
+  padding:48px 40px;width:100%;max-width:400px;text-align:center;
+}
+.login-logo{font-size:3rem;margin-bottom:12px}
+.login-title{font-size:1.5rem;font-weight:800;margin-bottom:6px}
+.login-sub{font-size:.9rem;color:var(--text2);margin-bottom:32px}
+.form-group{text-align:left;margin-bottom:18px}
+.form-group label{display:block;font-size:.875rem;font-weight:600;margin-bottom:6px;color:var(--text2)}
+.form-input{
+  width:100%;padding:11px 14px;background:var(--bg);border:1px solid var(--border2);
+  border-radius:var(--r-md);color:var(--text);font-size:.9375rem;outline:none;
+  transition:border-color .2s;
+}
+.form-input:focus{border-color:var(--gold)}
+.login-err{color:var(--red);font-size:.875rem;margin-bottom:14px;display:none}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 22px;
+  border-radius:var(--r-md);font-size:.9375rem;font-weight:600;cursor:pointer;
+  border:none;outline:none;transition:all .2s;white-space:nowrap;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold-d),var(--orange));color:#fff;box-shadow:0 4px 16px rgba(217,119,6,.35)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(217,119,6,.5)}
+.btn-outline{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--border2);background:rgba(255,255,255,.05);color:var(--text)}
+.btn-red{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.btn-red:hover{background:rgba(239,68,68,.25)}
+.btn-green{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.3)}
+.btn-green:hover{background:rgba(34,197,94,.25)}
+.btn-sm{padding:7px 14px;font-size:.8125rem;border-radius:var(--r-sm)}
+.btn-full{width:100%;justify-content:center}
+
+/* ─── APP SHELL ─── */
+#app{display:none;min-height:100vh}
+
+/* ─── SIDEBAR ─── */
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:var(--sidebar);
+  background:var(--bg2);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;z-index:50;overflow-y:auto;
+}
+.sidebar-logo{
+  display:flex;align-items:center;gap:10px;padding:20px 20px 16px;
+  font-size:1.1rem;font-weight:800;border-bottom:1px solid var(--border);
+  letter-spacing:-.02em;
+}
+.sidebar-logo-icon{font-size:1.4rem}
+.sidebar-logo-amp{color:var(--gold)}
+.sidebar-section{padding:12px 10px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)}
+.sidebar-nav{padding:0 10px;flex:1}
+.nav-link{
+  display:flex;align-items:center;gap:10px;padding:9px 12px;
+  border-radius:var(--r-md);font-size:.9rem;color:var(--text2);
+  cursor:pointer;transition:all .2s;margin-bottom:2px;border:none;
+  background:none;width:100%;text-align:left;
+}
+.nav-link:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nav-link.active{color:var(--gold);background:rgba(251,191,36,.1);font-weight:600}
+.nav-link .icon{font-size:1rem;width:20px;text-align:center}
+.nav-link .badge-count{margin-left:auto;background:var(--gold);color:#000;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:999px;min-width:20px;text-align:center}
+.sidebar-footer{padding:16px;border-top:1px solid var(--border)}
+.sidebar-user{display:flex;align-items:center;gap:10px}
+.user-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-d),var(--orange));display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;flex-shrink:0}
+.user-name{font-size:.875rem;font-weight:600}
+.user-role{font-size:.75rem;color:var(--text3)}
+.logout-btn{margin-left:auto;background:none;border:none;color:var(--text3);cursor:pointer;font-size:.875rem;padding:4px 8px;border-radius:6px;transition:color .2s}
+.logout-btn:hover{color:var(--red)}
+
+/* ─── MAIN ─── */
+.main-area{margin-left:var(--sidebar);min-height:100vh;display:flex;flex-direction:column}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;border-bottom:1px solid var(--border);
+  background:rgba(8,8,16,.8);backdrop-filter:blur(12px);
+  position:sticky;top:0;z-index:40;
+}
+.topbar-title{font-size:1.125rem;font-weight:700}
+.topbar-actions{display:flex;gap:10px;align-items:center}
+.content{padding:28px;flex:1}
+
+/* ─── VIEWS ─── */
+.view{display:none}
+.view.active{display:block}
+
+/* ─── DASHBOARD ─── */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-card{
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:22px 24px;transition:border-color .2s;
+}
+.stat-card:hover{border-color:var(--border2)}
+.stat-icon{font-size:1.5rem;margin-bottom:10px}
+.stat-num{font-size:2.25rem;font-weight:900;line-height:1;margin-bottom:4px}
+.stat-num.gold{background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-num.green{color:var(--green)}
+.stat-num.blue{color:var(--blue)}
+.stat-num.orange{color:var(--orange)}
+.stat-label{font-size:.875rem;color:var(--text2)}
+
+.recent-table-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.table-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border)}
+.table-title{font-size:1rem;font-weight:700}
+
+/* ─── TABLE ─── */
+.posts-table{width:100%;border-collapse:collapse}
+.posts-table th{text-align:left;padding:11px 16px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);border-bottom:1px solid var(--border)}
+.posts-table td{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;vertical-align:middle}
+.posts-table tr:last-child td{border-bottom:none}
+.posts-table tr:hover td{background:rgba(255,255,255,.02)}
+.post-title-cell{font-weight:600;max-width:300px}
+.post-title-cell p{font-size:.8rem;color:var(--text3);margin-top:3px;font-weight:400}
+
+.status-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;
+  border:1px solid;
+}
+.status-published{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)}
+.status-draft{background:rgba(100,116,139,.1);border-color:rgba(100,116,139,.3);color:var(--text3)}
+.status-scheduled{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:var(--blue)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+
+.action-btns{display:flex;gap:6px}
+
+/* ─── FILTERS ─── */
+.filter-bar{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.filter-tab{padding:7px 16px;border-radius:999px;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text2);transition:all .2s}
+.filter-tab:hover{border-color:var(--border2);color:var(--text)}
+.filter-tab.active{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.35);color:var(--gold)}
+.search-box{display:flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:8px 14px;margin-left:auto}
+.search-box input{background:none;border:none;outline:none;color:var(--text);font-size:.9rem;width:180px}
+.search-box input::placeholder{color:var(--text3)}
+
+/* ─── EDITOR ─── */
+.editor-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
+@media(max-width:900px){.editor-layout{grid-template-columns:1fr}}
+
+.editor-main{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.editor-toolbar{display:flex;gap:4px;padding:10px 14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.toolbar-btn{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:6px;padding:5px 10px;color:var(--text2);cursor:pointer;font-size:.875rem;font-weight:600;transition:all .2s}
+.toolbar-btn:hover{background:rgba(255,255,255,.12);color:var(--text)}
+
+.title-input{
+  width:100%;padding:20px 20px 10px;background:none;border:none;outline:none;
+  font-size:1.5rem;font-weight:800;color:var(--text);letter-spacing:-.02em;
+  font-family:inherit;border-bottom:1px solid var(--border);
+  resize:none;
+}
+.title-input::placeholder{color:var(--text3)}
+.slug-bar{padding:8px 20px;font-size:.8rem;color:var(--text3);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.slug-bar span{color:var(--text2);font-family:monospace}
+
+.content-editor{
+  width:100%;min-height:420px;padding:20px;background:none;border:none;
+  outline:none;color:var(--text);font-size:1rem;line-height:1.8;
+  font-family:inherit;resize:none;
+}
+.content-editor::placeholder{color:var(--text3)}
+
+/* editor preview */
+.editor-preview{
+  width:100%;min-height:420px;padding:20px;
+  font-size:1rem;line-height:1.8;color:var(--text2);
+  display:none;
+}
+.editor-preview h1,.editor-preview h2,.editor-preview h3{color:var(--text);margin:1.2em 0 .5em;font-weight:800}
+.editor-preview p{margin-bottom:1em}
+.editor-preview strong{color:var(--text);font-weight:700}
+.editor-preview em{font-style:italic}
+.editor-preview a{color:var(--gold);text-decoration:underline}
+.editor-preview blockquote{border-left:3px solid var(--gold);padding-left:16px;color:var(--text3);margin:1.5em 0}
+.editor-preview code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:.9em}
+.editor-preview ul,.editor-preview ol{padding-left:24px;margin-bottom:1em}
+.editor-preview ul li{list-style:disc;margin-bottom:.25em}
+.editor-preview ol li{list-style:decimal;margin-bottom:.25em}
+.editor-preview hr{border:none;border-top:1px solid var(--border);margin:2em 0}
+
+/* ─── SIDEBAR PANEL ─── */
+.panel{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:16px;overflow:hidden}
+.panel-header{padding:14px 16px;border-bottom:1px solid var(--border);font-size:.9rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.panel-body{padding:16px}
+.panel-row{margin-bottom:14px}
+.panel-row:last-child{margin-bottom:0}
+.panel-label{font-size:.8125rem;font-weight:600;color:var(--text2);margin-bottom:6px;display:block}
+.panel-select,.panel-input,.panel-textarea{
+  width:100%;padding:9px 12px;background:var(--bg);border:1px solid var(--border2);
+  border-radius:var(--r-sm);color:var(--text);font-size:.875rem;outline:none;
+  transition:border-color .2s;font-family:inherit;
+}
+.panel-select:focus,.panel-input:focus,.panel-textarea:focus{border-color:var(--gold)}
+.panel-textarea{resize:vertical;min-height:80px;line-height:1.5}
+.panel-select option{background:var(--bg2)}
+
+.schedule-fields{display:none;margin-top:10px}
+.schedule-fields.show{display:block}
+
+/* status pills inside select */
+.status-select-publish{color:var(--green)}
+.status-select-draft{color:var(--text3)}
+.status-select-scheduled{color:var(--blue)}
+
+/* ─── TOAST ─── */
+#toast-container{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast{
+  background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r-md);
+  padding:12px 18px;font-size:.9rem;font-weight:600;min-width:260px;
+  animation:slideIn .3s ease;display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);
+}
+.toast.success{border-color:rgba(34,197,94,.4);color:var(--green)}
+.toast.error{border-color:rgba(239,68,68,.4);color:var(--red)}
+.toast.info{border-color:rgba(59,130,246,.4);color:var(--blue)}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+
+/* ─── MODAL ─── */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);
+  z-index:500;display:none;align-items:center;justify-content:center;padding:24px;
+}
+.modal-overlay.show{display:flex}
+.modal{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r-xl);padding:32px;max-width:440px;width:100%;text-align:center}
+.modal-icon{font-size:2.5rem;margin-bottom:12px}
+.modal-title{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+.modal-desc{color:var(--text2);font-size:.9375rem;margin-bottom:24px}
+.modal-actions{display:flex;gap:10px;justify-content:center}
+
+/* ─── EMPTY STATE ─── */
+.empty-state{text-align:center;padding:64px 24px;color:var(--text3)}
+.empty-state .empty-icon{font-size:3rem;margin-bottom:14px}
+.empty-state p{margin-bottom:20px;font-size:.9375rem}
+
+/* ─── SEO CHECK ─── */
+.seo-check{display:flex;flex-direction:column;gap:8px}
+.seo-item{display:flex;align-items:flex-start;gap:8px;font-size:.8125rem}
+.seo-item .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dot-green{background:var(--green)}
+.dot-yellow{background:var(--gold)}
+.dot-red{background:var(--red)}
+
+/* ─── MISC ─── */
+.section-heading{font-size:1.25rem;font-weight:800;margin-bottom:6px}
+.section-sub{font-size:.9rem;color:var(--text2);margin-bottom:24px}
+.divider{height:1px;background:var(--border);margin:20px 0}
+.tag-input-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.tag-pill{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);color:var(--gold);padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:600;display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.tag-pill:hover{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:var(--red)}
+.char-count{font-size:.75rem;color:var(--text3);margin-top:4px;text-align:right}
+
+/* ─── MOBILE ─── */
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:none}
+  .main-area{margin-left:0}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .editor-layout{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ LOGIN ════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">🥇</div>
+    <div class="login-title">Medal &amp; More</div>
+    <div class="login-sub">Admin Panel — Sign in to continue</div>
+    <div class="form-group">
+      <label for="login-user">Username</label>
+      <input type="text" id="login-user" class="form-input" placeholder="admin" autocomplete="username">
+    </div>
+    <div class="form-group">
+      <label for="login-pass">Password</label>
+      <input type="password" id="login-pass" class="form-input" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <div class="login-err" id="login-err">❌ Incorrect username or password.</div>
+    <button class="btn btn-gold btn-full" onclick="doLogin()">Sign In →</button>
+    <p style="margin-top:20px;font-size:.8rem;color:var(--text3)">Default: admin / medal2028</p>
+  </div>
+</div>
+
+<!-- ════ APP ════ -->
+<div id="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="sidebar-logo-icon">🥇</span>
+      <span>Medal<span class="sidebar-logo-amp">&amp;</span>More</span>
+    </div>
+    <div class="sidebar-nav">
+      <div class="sidebar-section">Main</div>
+      <button class="nav-link active" onclick="showView('dashboard',this)">
+        <span class="icon">📊</span> Dashboard
+      </button>
+      <button class="nav-link" onclick="showView('posts',this)">
+        <span class="icon">📝</span> All Posts
+        <span class="badge-count" id="badge-all">0</span>
+      </button>
+      <button class="nav-link" onclick="newPost()">
+        <span class="icon">✏️</span> New Post
+      </button>
+
+      <div class="sidebar-section" style="margin-top:8px">Status</div>
+      <button class="nav-link" onclick="showView('posts',this,'published')">
+        <span class="icon">🟢</span> Published
+        <span class="badge-count" id="badge-pub" style="background:var(--green);color:#000">0</span>
+      </button>
+      <button class="nav-link" onclick="showView('posts',this,'draft')">
+        <span class="icon">⚫</span> Drafts
+        <span class="badge-count" id="badge-draft" style="background:var(--text3)">0</span>
+      </button>
+      <button class="nav-link" onclick="showView('posts',this,'scheduled')">
+        <span class="icon">🔵</span> Scheduled
+        <span class="badge-count" id="badge-sched" style="background:var(--blue)">0</span>
+      </button>
+
+      <div class="sidebar-section" style="margin-top:8px">Tools</div>
+      <button class="nav-link" onclick="showView('dashboard',this);setTimeout(importAutoDrafts,200)">
+        <span class="icon">🤖</span> Auto-Fetch
+        <span class="badge-count" id="badge-auto" style="background:var(--blue);display:none">!</span>
+      </button>
+
+      <div class="sidebar-section" style="margin-top:8px">Site</div>
+      <a class="nav-link" href="/" target="_blank">
+        <span class="icon">🌐</span> View Site
+      </a>
+      <a class="nav-link" href="/blog.html" target="_blank">
+        <span class="icon">📰</span> View Blog
+      </a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">A</div>
+        <div>
+          <div class="user-name">Admin</div>
+          <div class="user-role">Editor</div>
+        </div>
+        <button class="logout-btn" onclick="doLogout()" title="Logout">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-area">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:14px">
+        <button onclick="document.getElementById('sidebar').classList.toggle('open')" style="display:none;background:none;border:none;color:var(--text);font-size:1.25rem;cursor:pointer" id="mob-toggle">☰</button>
+        <span class="topbar-title" id="topbar-title">Dashboard</span>
+      </div>
+      <div class="topbar-actions">
+        <span id="topbar-date" style="font-size:.8125rem;color:var(--text3)"></span>
+        <button class="btn btn-gold btn-sm" onclick="newPost()">+ New Post</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- ═══ DASHBOARD ═══ -->
+      <div class="view active" id="view-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📝</div>
+            <div class="stat-num gold" id="dash-total">0</div>
+            <div class="stat-label">Total Posts</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🟢</div>
+            <div class="stat-num green" id="dash-published">0</div>
+            <div class="stat-label">Published</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🔵</div>
+            <div class="stat-num blue" id="dash-scheduled">0</div>
+            <div class="stat-label">Scheduled</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">⚫</div>
+            <div class="stat-num orange" id="dash-drafts">0</div>
+            <div class="stat-label">Drafts</div>
+          </div>
+        </div>
+
+        <!-- Auto-Fetch Import Banner -->
+        <div id="auto-fetch-banner" style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:var(--r-lg);padding:18px 24px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="font-size:1.5rem">🤖</span>
+            <div>
+              <div style="font-weight:700;font-size:.9375rem">Auto-Fetched Articles</div>
+              <div style="font-size:.8125rem;color:var(--text2)" id="auto-fetch-status">Checking for new articles…</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-outline btn-sm" onclick="checkAutoDrafts()">↻ Check</button>
+            <button class="btn btn-sm" id="import-btn" onclick="importAutoDrafts()" style="background:rgba(59,130,246,.15);color:var(--blue);border:1px solid rgba(59,130,246,.3);display:none">⬇ Import as Drafts</button>
+          </div>
+        </div>
+
+        <div class="recent-table-wrap">
+          <div class="table-header">
+            <span class="table-title">Recent Posts</span>
+            <button class="btn btn-outline btn-sm" onclick="showView('posts',null)">View all →</button>
+          </div>
+          <table class="posts-table">
+            <thead><tr>
+              <th>Title</th><th>Status</th><th>Category</th><th>Date</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="recent-posts-body">
+              <tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text3)">No posts yet. <button class="btn btn-gold btn-sm" onclick="newPost()" style="margin-left:10px">Create your first post</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ ALL POSTS ═══ -->
+      <div class="view" id="view-posts">
+        <div class="filter-bar">
+          <button class="filter-tab active" data-filter="all"   onclick="setFilter('all',this)">All</button>
+          <button class="filter-tab"        data-filter="published" onclick="setFilter('published',this)">Published</button>
+          <button class="filter-tab"        data-filter="draft"     onclick="setFilter('draft',this)">Drafts</button>
+          <button class="filter-tab"        data-filter="scheduled" onclick="setFilter('scheduled',this)">Scheduled</button>
+          <div class="search-box">
+            <span style="color:var(--text3)">🔍</span>
+            <input type="text" placeholder="Search posts…" id="search-input" oninput="renderPostsTable()">
+          </div>
+        </div>
+        <div class="recent-table-wrap">
+          <table class="posts-table">
+            <thead><tr>
+              <th>Title</th><th>Status</th><th>Category</th><th>Author</th><th>Date</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="all-posts-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ EDITOR ═══ -->
+      <div class="view" id="view-editor">
+        <div class="editor-layout">
+
+          <!-- Left: Editor -->
+          <div>
+            <div class="editor-main">
+              <div class="editor-toolbar">
+                <button class="toolbar-btn" onclick="fmt('bold')" title="Bold"><b>B</b></button>
+                <button class="toolbar-btn" onclick="fmt('italic')" title="Italic"><i>I</i></button>
+                <button class="toolbar-btn" onclick="fmtLine('## ')" title="H2">H2</button>
+                <button class="toolbar-btn" onclick="fmtLine('### ')" title="H3">H3</button>
+                <button class="toolbar-btn" onclick="fmtWrap('`','`')" title="Code">{'&lt;/&gt;'}</button>
+                <button class="toolbar-btn" onclick="fmtLine('> ')" title="Quote">❝</button>
+                <button class="toolbar-btn" onclick="fmtLine('- ')" title="List">• List</button>
+                <button class="toolbar-btn" onclick="fmtLink()" title="Link">🔗</button>
+                <button class="toolbar-btn" onclick="fmtLine('---\n')" title="Divider">—</button>
+                <button class="toolbar-btn" onclick="togglePreview()" id="preview-btn" title="Preview">👁 Preview</button>
+              </div>
+              <textarea class="title-input" id="post-title" placeholder="Post title…" oninput="updateSlug(this.value)" rows="2"></textarea>
+              <div class="slug-bar">🔗 Slug: <span id="post-slug-display">your-post-title</span> <button onclick="editSlug()" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:.8rem;padding:2px 6px;border-radius:4px;transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text3)'">Edit</button></div>
+              <textarea class="content-editor" id="post-content" placeholder="Write your post in Markdown…&#10;&#10;## Section heading&#10;&#10;Your content here. Use **bold**, *italic*, `code`, > blockquote…"></textarea>
+              <div class="editor-preview" id="editor-preview"></div>
+            </div>
+          </div>
+
+          <!-- Right: Settings panels -->
+          <div>
+
+            <!-- Publish panel -->
+            <div class="panel">
+              <div class="panel-header">🚀 Publish Settings</div>
+              <div class="panel-body">
+                <div class="panel-row">
+                  <label class="panel-label">Status</label>
+                  <select class="panel-select" id="post-status" onchange="onStatusChange(this.value)">
+                    <option value="draft">⚫ Draft</option>
+                    <option value="published">🟢 Published</option>
+                    <option value="scheduled">🔵 Scheduled</option>
+                  </select>
+                </div>
+                <div class="schedule-fields" id="schedule-fields">
+                  <label class="panel-label">Publish Date &amp; Time</label>
+                  <input type="datetime-local" class="panel-input" id="post-schedule-time">
+                  <p style="font-size:.75rem;color:var(--text3);margin-top:5px">Post will auto-publish at this time.</p>
+                </div>
+                <div class="panel-row">
+                  <label class="panel-label">Visibility</label>
+                  <select class="panel-select" id="post-visibility">
+                    <option value="public">🌍 Public</option>
+                    <option value="private">🔒 Private</option>
+                  </select>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+                  <button class="btn btn-outline btn-sm" onclick="savePost('draft')" style="flex:1;justify-content:center">Save Draft</button>
+                  <button class="btn btn-gold" onclick="savePost()" style="flex:1;justify-content:center" id="publish-btn">Publish</button>
+                </div>
+                <input type="hidden" id="editing-id">
+              </div>
+            </div>
+
+            <!-- Category & Tags -->
+            <div class="panel">
+              <div class="panel-header">🏷️ Category &amp; Tags</div>
+              <div class="panel-body">
+                <div class="panel-row">
+                  <label class="panel-label">Category</label>
+                  <select class="panel-select" id="post-category">
+                    <option value="Olympics">🏅 Olympics</option>
+                    <option value="Athletics">🏃 Athletics</option>
+                    <option value="Swimming">🏊 Swimming</option>
+                    <option value="Gymnastics">🤸 Gymnastics</option>
+                    <option value="Winter Sports">⛷️ Winter Sports</option>
+                    <option value="Team Sports">⚽ Team Sports</option>
+                    <option value="Athletes">🌟 Athletes</option>
+                    <option value="Medal Tally">🥇 Medal Tally</option>
+                    <option value="India">🇮🇳 India</option>
+                    <option value="Feature">📰 Feature</option>
+                    <option value="Opinion">💬 Opinion</option>
+                    <option value="News">📡 News</option>
+                  </select>
+                </div>
+                <div class="panel-row">
+                  <label class="panel-label">Tags <span style="color:var(--text3);font-weight:400">(press Enter to add)</span></label>
+                  <input type="text" class="panel-input" id="tag-input" placeholder="e.g. Paris 2024" onkeydown="addTag(event)">
+                  <div class="tag-input-wrap" id="tags-display" style="margin-top:8px"></div>
+                  <input type="hidden" id="post-tags">
+                </div>
+              </div>
+            </div>
+
+            <!-- Featured image -->
+            <div class="panel">
+              <div class="panel-header">🖼️ Featured Image</div>
+              <div class="panel-body">
+                <div class="panel-row">
+                  <label class="panel-label">Image URL</label>
+                  <input type="url" class="panel-input" id="post-image" placeholder="https://..." oninput="updateImagePreview()">
+                  <div id="img-preview" style="margin-top:10px;border-radius:8px;overflow:hidden;display:none">
+                    <img id="img-preview-el" src="" alt="Preview" style="width:100%;height:140px;object-fit:cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SEO -->
+            <div class="panel">
+              <div class="panel-header">🔍 SEO</div>
+              <div class="panel-body">
+                <div class="panel-row">
+                  <label class="panel-label">Meta Description</label>
+                  <textarea class="panel-textarea" id="post-meta-desc" placeholder="A brief description for search engines (150–160 chars)…" oninput="updateSeoCheck()" maxlength="160" rows="3"></textarea>
+                  <div class="char-count"><span id="meta-char-count">0</span>/160</div>
+                </div>
+                <div class="seo-check" id="seo-check">
+                  <div class="seo-item"><span class="dot dot-red"></span><span>Add a title</span></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- .content -->
+  </div><!-- .main-area -->
+</div><!-- #app -->
+
+<!-- Delete modal -->
+<div class="modal-overlay" id="delete-modal">
+  <div class="modal">
+    <div class="modal-icon">🗑️</div>
+    <div class="modal-title">Delete Post?</div>
+    <div class="modal-desc">This action cannot be undone. The post will be permanently removed.</div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-red" id="confirm-delete-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<script>
+/* ══════════════════════════════════════════
+   STORAGE
+══════════════════════════════════════════ */
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = 'medal2028';
+const POSTS_KEY  = 'mam_posts';
+const AUTH_KEY   = 'mam_auth';
+
+function getPosts(){ return JSON.parse(localStorage.getItem(POSTS_KEY)||'[]'); }
+function savePosts(p){ localStorage.setItem(POSTS_KEY, JSON.stringify(p)); }
+
+/* ══════════════════════════════════════════
+   AUTH
+══════════════════════════════════════════ */
+function doLogin(){
+  const u = document.getElementById('login-user').value.trim();
+  const p = document.getElementById('login-pass').value;
+  if(u===ADMIN_USER && p===ADMIN_PASS){
+    localStorage.setItem(AUTH_KEY,'1');
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('app').style.display='flex';
+    initApp();
+  } else {
+    document.getElementById('login-err').style.display='block';
+  }
+}
+function doLogout(){
+  localStorage.removeItem(AUTH_KEY);
+  location.reload();
+}
+document.getElementById('login-pass').addEventListener('keydown', e=> e.key==='Enter' && doLogin());
+document.getElementById('login-user').addEventListener('keydown', e=> e.key==='Enter' && doLogin());
+
+/* check auth on load */
+if(localStorage.getItem(AUTH_KEY)==='1'){
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('app').style.display='flex';
+  initApp();
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+function initApp(){
+  // set date
+  document.getElementById('topbar-date').textContent = new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  updateBadges();
+  renderDashboard();
+  checkScheduled();
+  setInterval(checkScheduled, 60000);
+  checkAutoDrafts();
+
+  // mobile toggle
+  if(window.innerWidth<=768) document.getElementById('mob-toggle').style.display='block';
+}
+
+/* ══════════════════════════════════════════
+   VIEWS
+══════════════════════════════════════════ */
+let currentFilter = 'all';
+
+function showView(name, btn, filter){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  const titles = {dashboard:'Dashboard',posts:'All Posts',editor:'Post Editor'};
+  document.getElementById('topbar-title').textContent = titles[name]||name;
+  if(name==='posts'){
+    if(filter){ currentFilter=filter; setFilter(filter, document.querySelector(`.filter-tab[data-filter="${filter}"]`)); }
+    else renderPostsTable();
+  }
+  if(name==='dashboard') renderDashboard();
+}
+
+/* ══════════════════════════════════════════
+   DASHBOARD
+══════════════════════════════════════════ */
+function renderDashboard(){
+  const posts = getPosts();
+  const pub   = posts.filter(p=>p.status==='published').length;
+  const sch   = posts.filter(p=>p.status==='scheduled').length;
+  const drf   = posts.filter(p=>p.status==='draft').length;
+  document.getElementById('dash-total').textContent     = posts.length;
+  document.getElementById('dash-published').textContent = pub;
+  document.getElementById('dash-scheduled').textContent = sch;
+  document.getElementById('dash-drafts').textContent    = drf;
+
+  const recent = [...posts].sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt)).slice(0,5);
+  const tbody  = document.getElementById('recent-posts-body');
+  if(!recent.length){
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text3)">No posts yet. <button class="btn btn-gold btn-sm" onclick="newPost()" style="margin-left:10px">Create your first post</button></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = recent.map(p=>`
+    <tr>
+      <td class="post-title-cell">${escHtml(p.title)||'(Untitled)'}<p>${escHtml(p.category||'')}</p></td>
+      <td>${statusBadge(p.status)}</td>
+      <td style="color:var(--text2)">${escHtml(p.category||'—')}</td>
+      <td style="color:var(--text3);font-size:.8125rem">${fmtDate(p.updatedAt)}</td>
+      <td><div class="action-btns">
+        <button class="btn btn-outline btn-sm" onclick="editPost('${p.id}')">Edit</button>
+        <button class="btn btn-red btn-sm" onclick="confirmDelete('${p.id}')">Delete</button>
+      </div></td>
+    </tr>
+  `).join('');
+}
+
+/* ══════════════════════════════════════════
+   POSTS TABLE
+══════════════════════════════════════════ */
+function setFilter(filter, btn){
+  currentFilter = filter;
+  document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderPostsTable();
+}
+
+function renderPostsTable(){
+  const q      = (document.getElementById('search-input')?.value||'').toLowerCase();
+  let   posts  = getPosts();
+  if(currentFilter!=='all') posts = posts.filter(p=>p.status===currentFilter);
+  if(q) posts = posts.filter(p=>(p.title||'').toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q));
+  posts = [...posts].sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));
+
+  const tbody = document.getElementById('all-posts-body');
+  if(!posts.length){
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-icon">📭</div><p>${currentFilter==='all'?'No posts yet.':'No '+currentFilter+' posts.'}</p><button class="btn btn-gold btn-sm" onclick="newPost()">+ New Post</button></div></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = posts.map(p=>`
+    <tr>
+      <td class="post-title-cell">${escHtml(p.title)||'(Untitled)'}<p>/${escHtml(p.slug||'')}</p></td>
+      <td>${statusBadge(p.status)}${p.status==='scheduled'?`<br><span style="font-size:.75rem;color:var(--blue);margin-top:3px;display:block">${fmtDate(p.scheduleTime)}</span>`:''}</td>
+      <td style="color:var(--text2)">${escHtml(p.category||'—')}</td>
+      <td style="color:var(--text2)">Admin</td>
+      <td style="color:var(--text3);font-size:.8125rem;white-space:nowrap">${fmtDate(p.updatedAt)}</td>
+      <td><div class="action-btns">
+        ${p.status==='published'?`<a href="/blog.html#${p.id}" target="_blank" class="btn btn-outline btn-sm">View</a>`:''}
+        <button class="btn btn-outline btn-sm" onclick="editPost('${p.id}')">Edit</button>
+        ${p.status!=='published'?`<button class="btn btn-green btn-sm" onclick="quickPublish('${p.id}')">Publish</button>`:''}
+        <button class="btn btn-red btn-sm" onclick="confirmDelete('${p.id}')">Delete</button>
+      </div></td>
+    </tr>
+  `).join('');
+}
+
+function quickPublish(id){
+  const posts = getPosts();
+  const i = posts.findIndex(p=>p.id===id);
+  if(i<0)return;
+  posts[i].status='published';
+  posts[i].publishedAt = new Date().toISOString();
+  posts[i].updatedAt   = new Date().toISOString();
+  savePosts(posts);
+  updateBadges();
+  renderPostsTable();
+  toast('Post published! ✅','success');
+}
+
+/* ══════════════════════════════════════════
+   EDITOR
+══════════════════════════════════════════ */
+let editingId   = null;
+let postTags    = [];
+let previewMode = false;
+
+function newPost(){
+  editingId   = null;
+  postTags    = [];
+  previewMode = false;
+  document.getElementById('post-title').value     = '';
+  document.getElementById('post-content').value   = '';
+  document.getElementById('post-slug-display').textContent = 'your-post-title';
+  document.getElementById('post-status').value    = 'draft';
+  document.getElementById('post-category').value  = 'Olympics';
+  document.getElementById('post-visibility').value= 'public';
+  document.getElementById('post-image').value     = '';
+  document.getElementById('post-meta-desc').value = '';
+  document.getElementById('post-schedule-time').value = '';
+  document.getElementById('editing-id').value     = '';
+  document.getElementById('tags-display').innerHTML = '';
+  document.getElementById('post-tags').value      = '';
+  document.getElementById('img-preview').style.display='none';
+  document.getElementById('schedule-fields').classList.remove('show');
+  document.getElementById('publish-btn').textContent = 'Publish';
+  document.getElementById('meta-char-count').textContent = '0';
+  // show editor
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-editor').classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  document.getElementById('topbar-title').textContent = 'New Post';
+  updateSeoCheck();
+}
+
+function editPost(id){
+  const posts = getPosts();
+  const p = posts.find(x=>x.id===id);
+  if(!p)return;
+  editingId = id;
+  postTags  = p.tags||[];
+  previewMode = false;
+
+  document.getElementById('post-title').value     = p.title||'';
+  document.getElementById('post-content').value   = p.content||'';
+  document.getElementById('post-slug-display').textContent = p.slug||'';
+  document.getElementById('editing-id').value     = id;
+  document.getElementById('post-status').value    = p.status||'draft';
+  document.getElementById('post-category').value  = p.category||'Olympics';
+  document.getElementById('post-visibility').value= p.visibility||'public';
+  document.getElementById('post-image').value     = p.image||'';
+  document.getElementById('post-meta-desc').value = p.metaDesc||'';
+  document.getElementById('post-schedule-time').value = p.scheduleTime ? p.scheduleTime.slice(0,16) : '';
+  document.getElementById('meta-char-count').textContent = (p.metaDesc||'').length;
+  onStatusChange(p.status||'draft');
+  renderTagsDisplay();
+  updateImagePreview();
+  document.getElementById('publish-btn').textContent = p.status==='published'?'Update':'Publish';
+
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-editor').classList.add('active');
+  document.getElementById('topbar-title').textContent = 'Edit Post';
+  updateSeoCheck();
+}
+
+function savePost(forceDraft){
+  const title   = document.getElementById('post-title').value.trim();
+  const content = document.getElementById('post-content').value.trim();
+  const status  = forceDraft ? 'draft' : document.getElementById('post-status').value;
+  const schedT  = document.getElementById('post-schedule-time').value;
+
+  if(!title){ toast('Please add a title first.','error'); return; }
+  if(status==='scheduled' && !schedT){ toast('Please set a schedule date/time.','error'); return; }
+
+  const posts   = getPosts();
+  const now     = new Date().toISOString();
+  const slug    = document.getElementById('post-slug-display').textContent || toSlug(title);
+
+  if(editingId){
+    const i = posts.findIndex(p=>p.id===editingId);
+    if(i>=0){
+      const wasPublished = posts[i].status==='published';
+      posts[i] = {
+        ...posts[i],
+        title, content, status, slug,
+        category:    document.getElementById('post-category').value,
+        visibility:  document.getElementById('post-visibility').value,
+        image:       document.getElementById('post-image').value.trim(),
+        metaDesc:    document.getElementById('post-meta-desc').value.trim(),
+        tags:        postTags,
+        scheduleTime: schedT ? new Date(schedT).toISOString() : null,
+        updatedAt:   now,
+        publishedAt: (!wasPublished && status==='published') ? now : (posts[i].publishedAt||null),
+      };
+    }
+  } else {
+    const newPost = {
+      id:          Date.now().toString(),
+      title, content, status, slug,
+      category:    document.getElementById('post-category').value,
+      visibility:  document.getElementById('post-visibility').value,
+      image:       document.getElementById('post-image').value.trim(),
+      metaDesc:    document.getElementById('post-meta-desc').value.trim(),
+      tags:        postTags,
+      scheduleTime: schedT ? new Date(schedT).toISOString() : null,
+      createdAt:   now,
+      updatedAt:   now,
+      publishedAt: status==='published' ? now : null,
+    };
+    posts.unshift(newPost);
+    editingId = newPost.id;
+    document.getElementById('editing-id').value = newPost.id;
+  }
+
+  savePosts(posts);
+  updateBadges();
+  renderDashboard();
+
+  const msgs = {published:'Post published! 🎉',draft:'Draft saved.',scheduled:'Post scheduled! 🔵'};
+  toast(msgs[status]||'Saved!','success');
+  document.getElementById('publish-btn').textContent = status==='published'?'Update':'Publish';
+}
+
+function onStatusChange(val){
+  const sf = document.getElementById('schedule-fields');
+  if(val==='scheduled') sf.classList.add('show');
+  else sf.classList.remove('show');
+  const pb = document.getElementById('publish-btn');
+  if(val==='draft') pb.textContent='Save as Draft';
+  else if(val==='scheduled') pb.textContent='Schedule';
+  else pb.textContent = editingId ? 'Update' : 'Publish';
+}
+
+/* ══════════════════════════════════════════
+   SCHEDULED AUTO-PUBLISH
+══════════════════════════════════════════ */
+function checkScheduled(){
+  const posts = getPosts();
+  const now   = new Date();
+  let   changed = false;
+  posts.forEach(p=>{
+    if(p.status==='scheduled' && p.scheduleTime && new Date(p.scheduleTime)<=now){
+      p.status='published';
+      p.publishedAt=p.scheduleTime;
+      p.updatedAt=now.toISOString();
+      changed=true;
+      toast(`"${p.title}" just published! 🟢`,'success');
+    }
+  });
+  if(changed){ savePosts(posts); updateBadges(); renderDashboard(); }
+}
+
+/* ══════════════════════════════════════════
+   TAGS
+══════════════════════════════════════════ */
+function addTag(e){
+  if(e.key!=='Enter')return;
+  e.preventDefault();
+  const val = e.target.value.trim();
+  if(val && !postTags.includes(val)){
+    postTags.push(val);
+    document.getElementById('post-tags').value = postTags.join(',');
+    renderTagsDisplay();
+  }
+  e.target.value='';
+}
+function removeTag(t){
+  postTags = postTags.filter(x=>x!==t);
+  document.getElementById('post-tags').value = postTags.join(',');
+  renderTagsDisplay();
+}
+function renderTagsDisplay(){
+  document.getElementById('tags-display').innerHTML = postTags.map(t=>
+    `<span class="tag-pill" onclick="removeTag('${escHtml(t)}')" title="Click to remove">${escHtml(t)} ×</span>`
+  ).join('');
+}
+
+/* ══════════════════════════════════════════
+   SLUG
+══════════════════════════════════════════ */
+function updateSlug(title){
+  document.getElementById('post-slug-display').textContent = toSlug(title)||'your-post-title';
+  updateSeoCheck();
+}
+function editSlug(){
+  const cur = document.getElementById('post-slug-display').textContent;
+  const nw  = prompt('Edit slug:', cur);
+  if(nw) document.getElementById('post-slug-display').textContent = toSlug(nw);
+}
+function toSlug(s){ return s.toLowerCase().replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').replace(/-+/g,'-').slice(0,80); }
+
+/* ══════════════════════════════════════════
+   PREVIEW
+══════════════════════════════════════════ */
+function togglePreview(){
+  previewMode = !previewMode;
+  const editor  = document.getElementById('post-content');
+  const preview = document.getElementById('editor-preview');
+  const btn     = document.getElementById('preview-btn');
+  if(previewMode){
+    preview.innerHTML = markdownToHtml(editor.value);
+    preview.style.display='block';
+    editor.style.display='none';
+    btn.textContent='✏️ Edit';
+  } else {
+    preview.style.display='none';
+    editor.style.display='block';
+    btn.textContent='👁 Preview';
+  }
+}
+
+function markdownToHtml(md){
+  return md
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^# (.+)$/gm,'<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/`(.+?)`/g,'<code>$1</code>')
+    .replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g,'<ul>$&</ul>')
+    .replace(/^\d+\. (.+)$/gm,'<li>$1</li>')
+    .replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2">$1</a>')
+    .replace(/^---$/gm,'<hr>')
+    .replace(/\n\n/g,'</p><p>')
+    .replace(/^(?!<[hbu]|<li|<hr|<bl)(.+)$/gm,'<p>$1</p>');
+}
+
+/* ══════════════════════════════════════════
+   TOOLBAR FORMATTING
+══════════════════════════════════════════ */
+function fmt(cmd){
+  const ta = document.getElementById('post-content');
+  const s=ta.selectionStart, e=ta.selectionEnd, sel=ta.value.slice(s,e);
+  const wrap = cmd==='bold'?'**':'*';
+  ta.setRangeText(wrap+sel+wrap,s,e,'end');
+}
+function fmtLine(prefix){
+  const ta=document.getElementById('post-content');
+  const s=ta.selectionStart;
+  const ls=ta.value.lastIndexOf('\n',s-1)+1;
+  ta.setRangeText(prefix,ls,ls,'end');
+}
+function fmtWrap(a,b){
+  const ta=document.getElementById('post-content');
+  const s=ta.selectionStart,e=ta.selectionEnd,sel=ta.value.slice(s,e);
+  ta.setRangeText(a+sel+b,s,e,'end');
+}
+function fmtLink(){
+  const url=prompt('URL:','https://');
+  if(!url)return;
+  const ta=document.getElementById('post-content');
+  const s=ta.selectionStart,e=ta.selectionEnd,sel=ta.value.slice(s,e)||'link text';
+  ta.setRangeText(`[${sel}](${url})`,s,e,'end');
+}
+
+/* ══════════════════════════════════════════
+   IMAGE PREVIEW
+══════════════════════════════════════════ */
+function updateImagePreview(){
+  const url=document.getElementById('post-image').value.trim();
+  const wrap=document.getElementById('img-preview');
+  const img =document.getElementById('img-preview-el');
+  if(url){ img.src=url; wrap.style.display='block'; }
+  else { wrap.style.display='none'; }
+}
+
+/* ══════════════════════════════════════════
+   SEO CHECK
+══════════════════════════════════════════ */
+function updateSeoCheck(){
+  const title  = document.getElementById('post-title').value.trim();
+  const desc   = document.getElementById('post-meta-desc').value.trim();
+  const dLen   = desc.length;
+  document.getElementById('meta-char-count').textContent = dLen;
+  const checks=[
+    { ok:title.length>0,         yellow:false, text:'Post has a title' },
+    { ok:title.length<=60,       yellow:title.length>0&&title.length>60, text:`Title length (${title.length}/60 chars)`  },
+    { ok:dLen>=120&&dLen<=160,   yellow:dLen>0&&dLen<120, text:`Meta description (${dLen}/160 chars)` },
+    { ok:document.getElementById('post-image').value.trim().length>0, yellow:false, text:'Featured image set' },
+    { ok:postTags.length>0,      yellow:false, text:'Tags added' },
+  ];
+  document.getElementById('seo-check').innerHTML = checks.map(c=>{
+    const cls = c.ok ? 'dot-green' : (c.yellow ? 'dot-yellow' : 'dot-red');
+    return `<div class="seo-item"><span class="dot ${cls}"></span><span style="color:${c.ok?'var(--green)':c.yellow?'var(--gold)':'var(--text2)'}">${c.text}</span></div>`;
+  }).join('');
+}
+
+/* ══════════════════════════════════════════
+   DELETE
+══════════════════════════════════════════ */
+let pendingDeleteId=null;
+function confirmDelete(id){
+  pendingDeleteId=id;
+  document.getElementById('delete-modal').classList.add('show');
+  document.getElementById('confirm-delete-btn').onclick=()=>deletePost(id);
+}
+function closeModal(){
+  document.getElementById('delete-modal').classList.remove('show');
+  pendingDeleteId=null;
+}
+function deletePost(id){
+  const posts=getPosts().filter(p=>p.id!==id);
+  savePosts(posts);
+  updateBadges();
+  renderDashboard();
+  renderPostsTable();
+  closeModal();
+  if(editingId===id){ newPost(); }
+  toast('Post deleted.','info');
+}
+
+/* ══════════════════════════════════════════
+   BADGES & HELPERS
+══════════════════════════════════════════ */
+function updateBadges(){
+  const posts=getPosts();
+  document.getElementById('badge-all').textContent   = posts.length;
+  document.getElementById('badge-pub').textContent   = posts.filter(p=>p.status==='published').length;
+  document.getElementById('badge-draft').textContent = posts.filter(p=>p.status==='draft').length;
+  document.getElementById('badge-sched').textContent = posts.filter(p=>p.status==='scheduled').length;
+}
+
+function statusBadge(s){
+  const map={
+    published:'<span class="status-badge status-published"><span class="status-dot"></span>Published</span>',
+    draft:    '<span class="status-badge status-draft"><span class="status-dot"></span>Draft</span>',
+    scheduled:'<span class="status-badge status-scheduled"><span class="status-dot"></span>Scheduled</span>',
+  };
+  return map[s]||map.draft;
+}
+
+function fmtDate(d){
+  if(!d)return '—';
+  return new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+
+function escHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function toast(msg, type='info'){
+  const el=document.createElement('div');
+  el.className=`toast ${type}`;
+  const icons={success:'✅',error:'❌',info:'ℹ️'};
+  el.innerHTML=`<span>${icons[type]||'ℹ️'}</span><span>${msg}</span>`;
+  document.getElementById('toast-container').appendChild(el);
+  setTimeout(()=>el.remove(),4000);
+}
+
+/* close modal on overlay click */
+document.getElementById('delete-modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeModal(); });
+
+/* ══════════════════════════════════════════
+   AUTO-FETCH DRAFTS
+══════════════════════════════════════════ */
+let pendingAutoDrafts = [];
+
+async function checkAutoDrafts(){
+  const statusEl = document.getElementById('auto-fetch-status');
+  const importBtn = document.getElementById('import-btn');
+  const badge = document.getElementById('badge-auto');
+  try {
+    const res = await fetch('./auto-drafts.json?t=' + Date.now());
+    if(!res.ok){ statusEl.textContent = 'No auto-fetched articles yet. Runs daily at 8 AM.'; return; }
+    const articles = await res.json();
+    if(!Array.isArray(articles)||!articles.length){ statusEl.textContent = 'No articles in queue.'; return; }
+    const existing = getPosts().map(p=>p.title);
+    const newOnes  = articles.filter(a=>!existing.includes(a.title));
+    pendingAutoDrafts = newOnes;
+    if(!newOnes.length){
+      statusEl.textContent = `All ${articles.length} fetched articles already imported.`;
+      importBtn.style.display = 'none';
+      badge.style.display = 'none';
+    } else {
+      statusEl.textContent = `${newOnes.length} new article${newOnes.length>1?'s':''} ready to import as drafts.`;
+      importBtn.style.display = 'inline-flex';
+      importBtn.textContent = `⬇ Import ${newOnes.length} Article${newOnes.length>1?'s':''} as Drafts`;
+      badge.style.display = 'inline-flex';
+    }
+  } catch(e){
+    statusEl.textContent = 'No auto-fetched articles yet. Runs daily at 8 AM.';
+  }
+}
+
+function importAutoDrafts(){
+  if(!pendingAutoDrafts.length){ toast('Nothing to import.','info'); return; }
+  const now = new Date().toISOString();
+  pendingAutoDrafts.forEach(a=>{
+    const id   = 'auto_' + Date.now() + '_' + Math.random().toString(36).slice(2,7);
+    const slug = a.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    const posts = getPosts();
+    posts.unshift({
+      id, title: a.title, content: a.content, status: 'draft', slug,
+      category: a.category||'News', visibility: 'public', image: a.image||'',
+      metaDesc: a.metaDesc||'', tags: Array.isArray(a.tags)?a.tags:[],
+      createdAt: now, updatedAt: now, publishedAt: null, scheduleTime: null, source: 'auto-fetch'
+    });
+    savePosts(posts);
+  });
+  const count = pendingAutoDrafts.length;
+  pendingAutoDrafts = [];
+  updateBadges();
+  renderDashboard();
+  document.getElementById('import-btn').style.display = 'none';
+  document.getElementById('badge-auto').style.display = 'none';
+  document.getElementById('auto-fetch-status').textContent = `${count} article${count>1?'s':''} imported as drafts ✓`;
+  toast(`${count} article${count>1?'s':''} imported as drafts!`, 'success');
+}
+</script>
+</body>
+</html>

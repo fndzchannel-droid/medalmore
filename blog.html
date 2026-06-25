@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Medal & More</title>
+<meta name="description" content="Olympic sports news, athlete stories, medal tallies and in-depth coverage from the Medal & More team.">
+<link rel="canonical" href="https://www.medalandmore.com/blog.html">
+<meta property="og:title"       content="Blog — Medal & More">
+<meta property="og:description" content="Olympic sports news, athlete stories and coverage.">
+<meta property="og:url"         content="https://www.medalandmore.com/blog.html">
+<meta property="og:type"        content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥇</text></svg>">
+<style>
+.page-hero{padding:calc(var(--nav-height) + 60px) 0 60px;text-align:center}
+.page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:12px}
+.page-hero p{color:var(--text-secondary);font-size:1.0625rem;max-width:480px;margin:0 auto 32px}
+.cat-filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px}
+.cat-btn{padding:7px 18px;border-radius:999px;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text-secondary);transition:all .2s;font-family:inherit}
+.cat-btn:hover{border-color:rgba(251,191,36,.4);color:var(--text-primary)}
+.cat-btn.active{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.35);color:#fbbf24}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.blog-card{background:#12121f;border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;transition:all .3s;cursor:pointer}
+.blog-card:hover{border-color:rgba(251,191,36,.3);transform:translateY(-4px);box-shadow:0 0 40px rgba(251,191,36,.1)}
+.blog-card-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:3rem;overflow:hidden;position:relative}
+.blog-card-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.blog-card-body{padding:22px}
+.blog-cat{font-size:.75rem;font-weight:700;color:#fbbf24;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;display:block}
+.blog-card-title{font-size:1.0625rem;font-weight:800;line-height:1.35;margin-bottom:10px;color:#e2e8f0}
+.blog-card-title:hover{color:#fbbf24}
+.blog-excerpt{font-size:.9rem;color:#94a3b8;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-meta{font-size:.8125rem;color:#64748b;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.blog-tag{padding:2px 8px;border:1px solid rgba(255,255,255,.08);border-radius:999px;font-size:.75rem;color:#64748b}
+.no-posts{text-align:center;padding:80px 0;color:#64748b}
+.no-posts .np-icon{font-size:3rem;margin-bottom:14px}
+.pagination{display:flex;justify-content:center;gap:8px;margin-top:48px}
+.page-btn{padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:transparent;color:#94a3b8;cursor:pointer;font-family:inherit;font-size:.875rem;transition:all .2s}
+.page-btn:hover{border-color:rgba(251,191,36,.35);color:#fbbf24}
+.page-btn.active{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.35);color:#fbbf24;font-weight:700}
+.search-wrap{max-width:400px;margin:0 auto 32px;display:flex;gap:10px}
+.search-wrap input{flex:1;padding:11px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#e2e8f0;font-size:.9375rem;outline:none;font-family:inherit;transition:border-color .2s}
+.search-wrap input:focus{border-color:#fbbf24}
+.admin-bar{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:12px 18px;margin-bottom:28px;display:flex;align-items:center;gap:12px;font-size:.875rem;color:#fbbf24}
+</style>
+</head>
+<body>
+
+<header id="site-header" role="banner">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo"><span class="logo-icon">🥇</span><span>Medal<span class="logo-amp">&amp;</span>More</span></a>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="/#news">News</a></li>
+        <li><a href="/#medals">Medal Tally</a></li>
+        <li><a href="/#sports">Sports</a></li>
+        <li><a href="/#athletes">Athletes</a></li>
+        <li><a href="/#games">Games</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="/#newsletter" class="btn btn-primary btn-sm">Subscribe Free</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span style="display:inline-block;font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fbbf24;margin-bottom:12px">The Blog</span>
+      <h1>Olympic <span class="gradient-text">Stories</span> &amp; News</h1>
+      <p>In-depth articles, athlete profiles, and breaking coverage from the world of Olympic sports.</p>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <input type="text" id="blog-search" placeholder="🔍  Search articles…" oninput="renderBlog()">
+      </div>
+
+      <!-- Category filters -->
+      <div class="cat-filters" id="cat-filters">
+        <button class="cat-btn active" data-cat="all" onclick="setCat('all',this)">All</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:96px">
+    <div class="container">
+      <div id="admin-bar" class="admin-bar" style="display:none">
+        ✏️ Admin mode — <a href="/admin.html" style="color:#fbbf24;font-weight:700;text-decoration:underline">Manage posts</a>
+      </div>
+      <div class="blog-grid" id="blog-grid"></div>
+      <div id="no-posts" class="no-posts" style="display:none">
+        <div class="np-icon">📭</div>
+        <p>No posts found. <a href="/" style="color:#fbbf24">Go home</a></p>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Medal &amp; More · medalandmore.com</p>
+      <p class="footer-copy" style="font-size:.8125rem">Not affiliated with the IOC. For informational purposes only.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+const POSTS_KEY = 'mam_posts';
+const AUTH_KEY  = 'mam_auth';
+const PER_PAGE  = 9;
+let currentPage = 1;
+let currentCat  = 'all';
+
+async function getAllPosts(){
+  const local = (JSON.parse(localStorage.getItem(POSTS_KEY)||'[]'))
+    .filter(p=>p.status==='published' && p.visibility!=='private');
+  let extras = [];
+  try {
+    const r = await fetch('./auto-drafts.json?t='+Date.now());
+    if(r.ok){
+      const arr = await r.json();
+      const titles = new Set(local.map(p=>p.title));
+      extras = arr.filter(a=>!titles.has(a.title)).map((a,i)=>{
+        const sl = a.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+        return {id:'json_'+sl, slug:sl, title:a.title, content:a.content,
+          category:a.category||'News', tags:a.tags||[], metaDesc:a.metaDesc||'',
+          image:a.image||'', status:'published', visibility:'public',
+          publishedAt: new Date(Date.now()-(i*86400000)).toISOString(),
+          createdAt: new Date().toISOString()};
+      });
+    }
+  } catch(e){}
+  return [...local,...extras]
+    .sort((a,b)=>new Date(b.publishedAt||b.createdAt)-new Date(a.publishedAt||a.createdAt));
+}
+
+function setCat(cat, btn){
+  currentCat=cat; currentPage=1;
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBlog();
+}
+
+async function renderBlog(){
+  let posts = await getAllPosts();
+  const q   = document.getElementById('blog-search').value.toLowerCase();
+
+  // Build category pills
+  const cats = ['all',...new Set(posts.map(p=>p.category).filter(Boolean))];
+  const cf = document.getElementById('cat-filters');
+  cf.innerHTML = cats.map(c=>`<button class="cat-btn${currentCat===c?' active':''}" data-cat="${c}" onclick="setCat('${c}',this)">${c==='all'?'All':c}</button>`).join('');
+
+  if(currentCat!=='all') posts=posts.filter(p=>p.category===currentCat);
+  if(q) posts=posts.filter(p=>(p.title||'').toLowerCase().includes(q)||(p.content||'').toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q));
+
+  const total = posts.length;
+  const pages = Math.ceil(total/PER_PAGE);
+  const slice = posts.slice((currentPage-1)*PER_PAGE, currentPage*PER_PAGE);
+
+  const grid = document.getElementById('blog-grid');
+  const np   = document.getElementById('no-posts');
+
+  if(!slice.length){ grid.innerHTML=''; np.style.display='block'; document.getElementById('pagination').innerHTML=''; return; }
+  np.style.display='none';
+
+  grid.innerHTML = slice.map(p=>`
+    <article class="blog-card reveal" onclick="location.href='post.html?slug=${p.slug||p.id}'">
+      <div class="blog-card-thumb">
+        ${p.image?`<img src="${escHtml(p.image)}" alt="${escHtml(p.title)}" loading="lazy">`:`<span>${categoryEmoji(p.category)}</span>`}
+      </div>
+      <div class="blog-card-body">
+        <span class="blog-cat">${escHtml(p.category||'Olympics')}</span>
+        <h2 class="blog-card-title">${escHtml(p.title)}</h2>
+        <p class="blog-excerpt">${escHtml(excerpt(p.content,140))}</p>
+        <div class="blog-meta">
+          <span>${fmtDate(p.publishedAt||p.createdAt)}</span>
+          <span>·</span>
+          <span>${readTime(p.content)} min read</span>
+          ${(p.tags||[]).slice(0,2).map(t=>`<span class="blog-tag">${escHtml(t)}</span>`).join('')}
+        </div>
+      </div>
+    </article>
+  `).join('');
+
+  // Re-trigger reveal
+  setTimeout(()=>{
+    document.querySelectorAll('.reveal').forEach(el=>{ const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1});io.observe(el); });
+  },50);
+
+  // Pagination
+  const pg = document.getElementById('pagination');
+  if(pages<=1){ pg.innerHTML=''; return; }
+  let html='';
+  if(currentPage>1) html+=`<button class="page-btn" onclick="goPage(${currentPage-1})">← Prev</button>`;
+  for(let i=1;i<=pages;i++) html+=`<button class="page-btn${i===currentPage?' active':''}" onclick="goPage(${i})">${i}</button>`;
+  if(currentPage<pages) html+=`<button class="page-btn" onclick="goPage(${currentPage+1})">Next →</button>`;
+  pg.innerHTML=html;
+}
+
+function goPage(n){ currentPage=n; renderBlog(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+function excerpt(md,len){ return (md||'').replace(/[#*`>\-\[\]()]/g,'').replace(/\n+/g,' ').trim().slice(0,len)+(md&&md.length>len?'…':''); }
+function readTime(md){ return Math.max(1,Math.ceil((md||'').split(/\s+/).length/200)); }
+function fmtDate(d){ if(!d)return ''; return new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
+function escHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function categoryEmoji(c){
+  const map={'Swimming':'🏊','Athletics':'🏃','Gymnastics':'🤸','Winter Sports':'⛷️','Team Sports':'⚽','Athletes':'🌟','Medal Tally':'🥇','India':'🇮🇳','Feature':'📰','Opinion':'💬','News':'📡'};
+  return map[c]||'🏅';
+}
+
+// Show admin bar if logged in
+if(localStorage.getItem(AUTH_KEY)==='1') document.getElementById('admin-bar').style.display='flex';
+
+// Scroll to post anchor
+const hash = location.hash.replace('#','');
+if(hash){ setTimeout(()=>{ const el=document.getElementById(hash); if(el) el.scrollIntoView({behavior:'smooth'}); },300); }
+
+renderBlog().catch(console.error);
+</script>
+</body>
+</html>
