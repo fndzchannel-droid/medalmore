@@ -42,6 +42,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥇</text></svg>">
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
@@ -488,4 +489,103 @@
           <li><a href="/#news" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Latest News</a></li>
           <li><a href="/#medals" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Medal Tally</a></li>
           <li><a href="/#athletes" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Athletes</a></li>
-          <li><a href="/#sports" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.st
+          <li><a href="/#sports" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Sports</a></li>
+          <li><a href="blog.html" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:16px">Games</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="/#games" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Milan-Cortina 2026</a></li>
+          <li><a href="/#games" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">LA 2028</a></li>
+          <li><a href="/#games" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Brisbane 2032</a></li>
+          <li><a href="/#games" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Paris 2024</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:16px">About</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="#" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+          <li><a href="#" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Contact</a></li>
+          <li><a href="#" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
+          <li><a href="admin.html" style="color:#94a3b8;font-size:.9rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#94a3b8'">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+      <p style="font-size:.875rem;color:#475569">© 2026 Medal &amp; More · medalandmore.com · All rights reserved.</p>
+      <p style="font-size:.8125rem;color:#334155">Not affiliated with the IOC or any Olympic body. For informational purposes only.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+
+<script>
+// LA 2028 countdown
+(function(){
+  const target = new Date('2028-07-14T00:00:00');
+  const el = document.getElementById('la-countdown');
+  if(el){ const diff = Math.ceil((target - new Date()) / 86400000); el.textContent = diff > 0 ? diff.toLocaleString() : '0'; }
+})();
+</script>
+
+<script>
+// Newsletter form
+document.getElementById('newsletter-form')?.addEventListener('submit', function(e){
+  e.preventDefault();
+  const msg = document.getElementById('nl-msg');
+  const email = document.getElementById('nl-email').value;
+  if(!email || !email.includes('@')){ msg.style.display='block'; msg.style.color='#f87171'; msg.textContent='Please enter a valid email address.'; return; }
+  msg.style.display='block'; msg.style.color='#4ade80'; msg.textContent='Thanks for subscribing! Welcome to Medal & More.';
+  this.reset();
+});
+</script>
+
+<script>
+// Blog preview section — reads from localStorage or falls back to auto-drafts.json
+(function(){
+  var SEED = [
+    {title:"Norway Sets All-Time Winter Olympics Record as USA Posts Historic Gold Haul",slug:"norway-sets-all-time-winter-olympics-record-as-usa-posts-historic-gold-haul-at-milano-cortina-2026",category:"Olympics",metaDesc:"Norway won a record 41 medals and the USA earned 12 golds at the 2026 Winter Olympics in Milano Cortina — a Games packed with historic performances."},
+    {title:"Speed Demons: Every Olympic Record Shattered at Milano Cortina 2026",slug:"speed-demons-every-olympic-record-shattered-at-the-milano-cortina-2026-winter-games",category:"Winter Sports",metaDesc:"Nine Olympic records were broken at Milano Cortina 2026. Jordan Stolz, Xandra Velzeboer, and Francesca Lollobrigida led the charge on Italy's fast ice."},
+    {title:"Arif Khan's Historic Slalom Finish Puts India on the Winter Olympics Map",slug:"arif-khans-historic-slalom-finish-puts-india-on-the-winter-olympics-map",category:"India",metaDesc:"Arif Khan's 39th-place slalom finish at Milano Cortina 2026 is India's best-ever result in the event."}
+  ];
+  function card(title, slug, category, excerpt){
+    return '<article style="background:#12121f;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px;transition:border-color .25s" onmouseover="this.style.borderColor='rgba(251,191,36,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">'
+      +'<span style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fbbf24">'+category+'</span>'
+      +'<h3 style="font-size:1.1rem;font-weight:800;line-height:1.4;margin:0"><a href="post.html?slug='+slug+'" style="color:inherit;text-decoration:none">'+title+'</a></h3>'
+      +'<p style="font-size:.875rem;color:#94a3b8;line-height:1.6;margin:0;flex:1">'+excerpt+'</p>'
+      +'<a href="post.html?slug='+slug+'" style="font-size:.875rem;font-weight:600;color:#fbbf24;text-decoration:none">Read more →</a>'
+      +'</article>';
+  }
+  var grid = document.getElementById('blog-preview-grid');
+  if(!grid) return;
+  try{
+    var stored = JSON.parse(localStorage.getItem('mam_posts')||'[]');
+    var published = stored.filter(function(p){return p.status==='published';}).slice(0,3);
+    if(published.length){
+      grid.innerHTML = published.map(function(p){
+        var sl = p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+        return card(p.title, sl, p.category||'Olympics', p.metaDesc||p.content.replace(/#+\s*/g,'').slice(0,120)+'…');
+      }).join('');
+      return;
+    }
+  }catch(e){}
+  // Fetch from auto-drafts.json
+  fetch('./auto-drafts.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(arr){
+    if(arr&&arr.length){
+      grid.innerHTML = arr.slice(0,3).map(function(a){
+        var sl = a.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+        return card(a.title,sl,a.category||'Olympics',a.metaDesc||'');
+      }).join('');
+    } else {
+      grid.innerHTML = SEED.map(function(a){return card(a.title,a.slug,a.category,a.metaDesc);}).join('');
+    }
+  }).catch(function(){
+    grid.innerHTML = SEED.map(function(a){return card(a.title,a.slug,a.category,a.metaDesc);}).join('');
+  });
+})();
+</script>
+
+</body>
+</html>
