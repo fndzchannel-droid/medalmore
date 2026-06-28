@@ -10,7 +10,7 @@
       "Team USA"
     ],
     "metaDesc": "Norway won a record 41 medals and the USA earned 12 golds at the 2026 Winter Olympics in Milano Cortina — a Games packed with historic performances.",
-    "image": ""
+    "image": "assets/library/winter.jpg"
   },
   {
     "title": "Speed Demons: Every Olympic Record Shattered at the Milano Cortina 2026 Winter Games",
@@ -23,7 +23,7 @@
       "Jordan Stolz"
     ],
     "metaDesc": "Nine Olympic records were broken at Milano Cortina 2026. Jordan Stolz, Xandra Velzeboer, and Francesca Lollobrigida led the charge on Italy's fast ice.",
-    "image": ""
+    "image": "assets/library/winter.jpg"
   },
   {
     "title": "Heir to the Throne: Filip Nowacki and the Breaststroke Legacy of Adam Peaty",
@@ -38,6 +38,6 @@
       "Swimming"
     ],
     "metaDesc": "Rising British breaststroke star Filip Nowacki opens up on following Adam Peaty, whose gold medal and world record at Rio 2016 still shape a generation.",
-    "image": ""
+    "image": "assets/library/swimming.jpg"
   }
 ]
