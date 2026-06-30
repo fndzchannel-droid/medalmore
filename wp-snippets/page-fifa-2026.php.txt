@@ -1,0 +1,129 @@
+<?php
+/**
+ * Template Name: FIFA 2026 Hub
+ * Renders the FIFA World Cup 2026 match tables from fifa-hub.json in the
+ * medalmore GitHub repo, so the page stays in sync with the daily automation.
+ *
+ * One-time setup: upload this file to your active theme folder (replacing the
+ * old page-fifa-2026.php), then make sure the "FIFA World Cup 2026" page uses
+ * the "FIFA 2026 Hub" template. After that, nothing here needs manual editing —
+ * the automation refreshes fifa-hub.json and this page follows.
+ */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+/** Fetch the hub JSON from GitHub raw, cached 5 minutes via a transient. */
+if ( ! function_exists( 'mm_fifa_hub_data' ) ) {
+    function mm_fifa_hub_data() {
+        $cached = get_transient( 'mm_fifa_hub' );
+        if ( $cached !== false ) { return $cached; }
+
+        $url  = 'https://raw.githubusercontent.com/fndzchannel-droid/medalmore/main/fifa-hub.json';
+        $resp = wp_remote_get( $url, array( 'timeout' => 8 ) );
+        if ( is_wp_error( $resp ) || wp_remote_retrieve_response_code( $resp ) !== 200 ) {
+            return get_option( 'mm_fifa_hub_last', array() ); // fall back to last good copy
+        }
+        $data = json_decode( wp_remote_retrieve_body( $resp ), true );
+        if ( ! is_array( $data ) ) {
+            return get_option( 'mm_fifa_hub_last', array() );
+        }
+        set_transient( 'mm_fifa_hub', $data, 5 * MINUTE_IN_SECONDS );
+        update_option( 'mm_fifa_hub_last', $data ); // durable fallback
+        return $data;
+    }
+}
+
+$hub      = mm_fifa_hub_data();
+$results  = isset( $hub['results'] )  ? $hub['results']  : array();
+$fixtures = isset( $hub['fixtures'] ) ? $hub['fixtures'] : array();
+$schedule = isset( $hub['schedule'] ) ? $hub['schedule'] : array();
+$through  = isset( $hub['through'] )  ? $hub['through']  : array();
+$champion = isset( $hub['champion'] ) ? trim( $hub['champion'] ) : '';
+$stage    = isset( $hub['stage'] )    ? $hub['stage']    : 'Round of 32';
+$updated  = isset( $hub['updated'] )  ? $hub['updated']  : '';
+
+get_header();
+?>
+<style>
+.mm-fifa{max-width:1100px;margin:0 auto;padding:20px 16px;font-family:inherit}
+.mm-fifa h2{margin:28px 0 10px;font-size:1.25rem}
+.mm-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.mm-card{border:1px solid #e3e3e3;border-radius:12px;padding:14px;background:#fff}
+.mm-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:600}
+.mm-score{font-size:1.2rem;font-weight:800}
+.mm-meta{color:#666;font-size:.82rem;margin-top:6px}
+.mm-note{color:#0a7d2c;font-size:.82rem;margin-top:4px;font-weight:600}
+.mm-pill{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:999px;background:#eef;color:#3340c0;margin-bottom:8px}
+.mm-tbl{width:100%;border-collapse:collapse;font-size:.9rem}
+.mm-tbl th,.mm-tbl td{border-bottom:1px solid #eee;padding:8px 6px;text-align:left}
+.mm-tbl .ft{color:#0a7d2c;font-weight:700}.mm-tbl .ns{color:#999}
+.mm-through span{display:inline-block;background:#eef9ee;border:1px solid #cfe9cf;border-radius:999px;padding:4px 12px;margin:4px 6px 0 0;font-weight:600}
+.mm-upd{color:#999;font-size:.78rem;margin-top:18px}
+</style>
+
+<div class="mm-fifa">
+
+  <h2>Recent Results — <?php echo esc_html( $stage ); ?></h2>
+  <div class="mm-cards">
+    <?php foreach ( $results as $r ) : ?>
+      <div class="mm-card">
+        <span class="mm-pill">FT</span>
+        <div class="mm-row">
+          <span><?php echo esc_html( $r['hf'].' '.$r['home'] ); ?></span>
+          <span class="mm-score"><?php echo esc_html( $r['hs'].' – '.$r['as'] ); ?></span>
+          <span><?php echo esc_html( $r['away'].' '.$r['af'] ); ?></span>
+        </div>
+        <?php if ( ! empty( $r['note'] ) ) : ?><div class="mm-note"><?php echo esc_html( $r['note'] ); ?></div><?php endif; ?>
+        <div class="mm-meta"><?php echo esc_html( $r['date'].' · '.$r['venue'] ); ?></div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+
+  <h2>Upcoming Fixtures</h2>
+  <div class="mm-cards">
+    <?php foreach ( $fixtures as $f ) : ?>
+      <div class="mm-card">
+        <span class="mm-pill">Upcoming</span>
+        <div class="mm-row">
+          <span><?php echo esc_html( $f['hf'].' '.$f['home'] ); ?></span>
+          <span class="mm-score"><?php echo esc_html( $f['et'] ); ?></span>
+          <span><?php echo esc_html( $f['away'].' '.$f['af'] ); ?></span>
+        </div>
+        <div class="mm-meta"><?php echo esc_html( $f['ist'].' · '.$f['gmt'] ); ?></div>
+        <div class="mm-meta"><?php echo esc_html( $f['date'].' · '.$f['venue'] ); ?></div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+
+  <h2>Round of 32 — Full Schedule</h2>
+  <table class="mm-tbl">
+    <thead><tr><th>Date</th><th>Match</th><th>Score</th><th>Venue</th><th>Status</th></tr></thead>
+    <tbody>
+    <?php foreach ( $schedule as $s ) : ?>
+      <tr>
+        <td><?php echo esc_html( $s['date'] ); ?></td>
+        <td><?php echo esc_html( $s['hf'].' '.$s['home'].'  v  '.$s['away'].' '.$s['af'] ); ?></td>
+        <td><?php echo esc_html( $s['score'] ); ?></td>
+        <td><?php echo esc_html( $s['venue'] ); ?></td>
+        <td class="<?php echo $s['status']==='FT'?'ft':'ns'; ?>"><?php echo esc_html( $s['status'] ); ?></td>
+      </tr>
+    <?php endforeach; ?>
+    </tbody>
+  </table>
+
+  <h2>✅ Teams Through to the Round of 16</h2>
+  <div class="mm-through">
+    <?php if ( $through ) { foreach ( $through as $t ) { echo '<span>'.esc_html( $t ).'</span>'; } }
+          else { echo '<em>To be confirmed.</em>'; } ?>
+  </div>
+
+  <?php if ( $champion !== '' ) : ?>
+    <h2>🏆 Champions</h2>
+    <p style="font-size:1.3rem;font-weight:800"><?php echo esc_html( $champion ); ?></p>
+  <?php endif; ?>
+
+  <?php if ( $updated ) : ?><p class="mm-upd">Match data updated: <?php echo esc_html( $updated ); ?> · source: fifa-hub.json</p><?php endif; ?>
+
+</div>
+<?php
+get_footer();
