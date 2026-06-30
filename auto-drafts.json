@@ -10,7 +10,10 @@
       "Team USA"
     ],
     "metaDesc": "Norway won a record 41 medals and the USA earned 12 golds at the 2026 Winter Olympics in Milano Cortina — a Games packed with historic performances.",
-    "image": "assets/library/winter.jpg"
+    "image": "assets/library/winter.jpg",
+    "id": "norway-usa-medal-record-milano-cortina-2026",
+    "seoTitle": "Milano Cortina 2026: Norway & USA Smash Medal Records",
+    "focusKeyword": "Milano Cortina 2026 medal table"
   },
   {
     "title": "Speed Demons: Every Olympic Record Shattered at the Milano Cortina 2026 Winter Games",
@@ -23,7 +26,10 @@
       "Jordan Stolz"
     ],
     "metaDesc": "Nine Olympic records were broken at Milano Cortina 2026. Jordan Stolz, Xandra Velzeboer, and Francesca Lollobrigida led the charge on Italy's fast ice.",
-    "image": "assets/library/winter.jpg"
+    "image": "assets/library/winter.jpg",
+    "id": "olympic-records-milano-cortina-2026",
+    "seoTitle": "Milano Cortina 2026: Every Olympic Record Broken",
+    "focusKeyword": "Milano Cortina 2026 Olympic records"
   },
   {
     "title": "Heir to the Throne: Filip Nowacki and the Breaststroke Legacy of Adam Peaty",
@@ -38,7 +44,10 @@
       "Swimming"
     ],
     "metaDesc": "Rising British breaststroke star Filip Nowacki opens up on following Adam Peaty, whose gold medal and world record at Rio 2016 still shape a generation.",
-    "image": "assets/library/swimming.jpg"
+    "image": "assets/library/swimming.jpg",
+    "id": "filip-nowacki-adam-peaty-breaststroke",
+    "seoTitle": "Filip Nowacki: Heir to Adam Peaty's Breaststroke",
+    "focusKeyword": "Filip Nowacki breaststroke"
   },
   {
     "title": "Farewell to Tom Bombadill Too, the Olympic Horse Who Changed a Rider's Life",
@@ -52,7 +61,10 @@
       "Tribute"
     ],
     "metaDesc": "Brazilian eventer Ruy Fonseca pays tribute to Tom Bombadill Too, his London 2012 and Rio 2016 Olympic horse, who has died aged 26.",
-    "image": "assets/library/olympics.jpg"
+    "image": "assets/library/olympics.jpg",
+    "id": "tom-bombadill-too-olympic-horse-tribute",
+    "seoTitle": "Tom Bombadill Too: Tribute to an Olympic Horse",
+    "focusKeyword": "Tom Bombadill Too Olympic horse"
   },
   {
     "title": "Cricket Returns to the Olympics: IOC Approves LA28 Pathway, India Qualify",
@@ -66,7 +78,10 @@
       "Qualification"
     ],
     "metaDesc": "The IOC has approved cricket's LA28 Olympic qualification pathway, with India's women among the first four teams to secure a place.",
-    "image": "assets/library/summer.jpg"
+    "image": "assets/library/summer.jpg",
+    "id": "cricket-la28-olympics-india-qualify",
+    "seoTitle": "Cricket at LA28 Olympics: India Qualify",
+    "focusKeyword": "cricket LA28 Olympics"
   },
   {
     "title": "Belgium's Red Lions Win Pro League, First Men's Team to Qualify for LA28",
@@ -80,6 +95,9 @@
       "Red Lions"
     ],
     "metaDesc": "Belgium's Red Lions clinched the FIH Pro League 2025-26 title and became the first men's hockey team to qualify for the LA28 Olympics.",
-    "image": "assets/library/summer.jpg"
+    "image": "assets/library/summer.jpg",
+    "id": "belgium-red-lions-pro-league-la28",
+    "seoTitle": "Belgium Red Lions Qualify for LA28 Hockey",
+    "focusKeyword": "Belgium hockey LA28 qualification"
   }
 ]
