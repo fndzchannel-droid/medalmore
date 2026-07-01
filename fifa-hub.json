@@ -1,8 +1,19 @@
 {
-  "updated": "2026-07-01T18:33:12Z",
+  "updated": "2026-07-01T19:33:13Z",
   "stage": "Round of 32",
   "headline": "Round of 32 — England edge DR Congo 2-1; Belgium-Senegal & USA-Bosnia close the day",
   "results": [
+    {
+      "date": "Wed Jul 1",
+      "home": "England",
+      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "hs": 2,
+      "as": 1,
+      "away": "DR Congo",
+      "af": "🇨🇩",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
+      "note": "Kane 75', 86'"
+    },
     {
       "date": "Wed Jul 1",
       "home": "England",
@@ -46,17 +57,6 @@
       "af": "🇳🇴",
       "venue": "AT&T Stadium, Dallas",
       "note": "Haaland winner 86'"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "France",
-      "hf": "🇫🇷",
-      "hs": 3,
-      "as": 0,
-      "away": "Sweden",
-      "af": "🇸🇪",
-      "venue": "MetLife Stadium, NJ",
-      "note": "Mbappe brace"
     }
   ],
   "fixtures": [
@@ -86,7 +86,7 @@
       "date": "Thu Jul 2",
       "et": "3:00 PM ET",
       "ist": "12:30 AM IST (Jul 3)",
-      "gmt": "7:00 PM GMT",
+      "gmt": "8:00 PM GMT",
       "home": "Spain",
       "hf": "🇪🇸",
       "away": "Austria",
