@@ -1,8 +1,19 @@
 {
-  "updated": "2026-07-01T17:32:00Z",
+  "updated": "2026-07-01T18:33:12Z",
   "stage": "Round of 32",
-  "headline": "Round of 32 — DR Congo lead England 1-0 in Atlanta; last 16 taking shape",
+  "headline": "Round of 32 — England edge DR Congo 2-1; Belgium-Senegal & USA-Bosnia close the day",
   "results": [
+    {
+      "date": "Wed Jul 1",
+      "home": "England",
+      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "hs": 2,
+      "as": 1,
+      "away": "DR Congo",
+      "af": "🇨🇩",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
+      "note": "Kane brace 75', 86'"
+    },
     {
       "date": "Mon Jun 29",
       "home": "Germany",
@@ -46,31 +57,9 @@
       "af": "🇸🇪",
       "venue": "MetLife Stadium, NJ",
       "note": "Mbappe brace"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "Mexico",
-      "hf": "🇲🇽",
-      "hs": 2,
-      "as": 0,
-      "away": "Ecuador",
-      "af": "🇪🇨",
-      "venue": "Estadio Azteca, Mexico City",
-      "note": "Quinones & Jimenez"
     }
   ],
   "fixtures": [
-    {
-      "date": "Wed Jul 1",
-      "et": "12:00 PM ET",
-      "ist": "9:30 PM IST",
-      "gmt": "4:00 PM GMT",
-      "home": "England",
-      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "away": "DR Congo",
-      "af": "🇨🇩",
-      "venue": "Mercedes-Benz Stadium, Atlanta"
-    },
     {
       "date": "Wed Jul 1",
       "et": "4:00 PM ET",
@@ -92,6 +81,17 @@
       "away": "Bosnia & Herz.",
       "af": "🇧🇦",
       "venue": "Levi's Stadium, San Francisco Bay"
+    },
+    {
+      "date": "Thu Jul 2",
+      "et": "3:00 PM ET",
+      "ist": "12:30 AM IST (Jul 3)",
+      "gmt": "7:00 PM GMT",
+      "home": "Spain",
+      "hf": "🇪🇸",
+      "away": "Austria",
+      "af": "🇦🇹",
+      "venue": "SoFi Stadium, LA"
     }
   ],
   "schedule": [
@@ -168,12 +168,12 @@
     {
       "date": "Wed Jul 1",
       "home": "England",
-      "hf": "🏴",
-      "score": "—",
+      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "score": "2–1",
       "away": "DR Congo",
       "af": "🇨🇩",
       "venue": "Mercedes-Benz Stadium, Atlanta",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Wed Jul 1",
@@ -263,7 +263,8 @@
     "Morocco 🇲🇦",
     "Norway 🇳🇴",
     "France 🇫🇷",
-    "Mexico 🇲🇽"
+    "Mexico 🇲🇽",
+    "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿"
   ],
   "champion": ""
 }
