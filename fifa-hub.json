@@ -1,19 +1,8 @@
 {
-  "updated": "2026-06-30T19:33:03Z",
+  "updated": "2026-07-01T00:05:00Z",
   "stage": "Round of 32",
-  "headline": "Round of 32 Underway",
+  "headline": "Round of 32 Knockouts Underway",
   "results": [
-    {
-      "date": "Sun Jun 28",
-      "home": "South Africa",
-      "hf": "🇿🇦",
-      "hs": 0,
-      "as": 1,
-      "away": "Canada",
-      "af": "🇨🇦",
-      "venue": "SoFi Stadium, LA",
-      "note": ""
-    },
     {
       "date": "Mon Jun 29",
       "home": "Brazil",
@@ -57,20 +46,20 @@
       "af": "🇳🇴",
       "venue": "AT&T Stadium, Dallas",
       "note": "Haaland winner 86'"
+    },
+    {
+      "date": "Tue Jun 30",
+      "home": "France",
+      "hf": "🇫🇷",
+      "hs": 3,
+      "as": 0,
+      "away": "Sweden",
+      "af": "🇸🇪",
+      "venue": "MetLife Stadium, NJ",
+      "note": "Mbappe brace"
     }
   ],
   "fixtures": [
-    {
-      "date": "Tue Jun 30",
-      "et": "5:00 PM ET",
-      "ist": "2:30 AM IST (Jul 1)",
-      "gmt": "9:00 PM GMT",
-      "home": "France",
-      "hf": "🇫🇷",
-      "away": "Sweden",
-      "af": "🇸🇪",
-      "venue": "MetLife Stadium, NJ"
-    },
     {
       "date": "Tue Jun 30",
       "et": "9:00 PM ET",
@@ -92,6 +81,17 @@
       "away": "DR Congo",
       "af": "🇨🇩",
       "venue": "Mercedes-Benz Stadium, Atlanta"
+    },
+    {
+      "date": "Wed Jul 1",
+      "et": "4:00 PM ET",
+      "ist": "1:30 AM IST (Jul 2)",
+      "gmt": "8:00 PM GMT",
+      "home": "Belgium",
+      "hf": "🇧🇪",
+      "away": "Senegal",
+      "af": "🇸🇳",
+      "venue": "Lumen Field, Seattle"
     }
   ],
   "schedule": [
@@ -149,11 +149,11 @@
       "date": "Tue Jun 30",
       "home": "France",
       "hf": "🇫🇷",
-      "score": "—",
+      "score": "3–0",
       "away": "Sweden",
       "af": "🇸🇪",
       "venue": "MetLife Stadium, NJ",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Tue Jun 30",
@@ -261,7 +261,8 @@
     "Brazil 🇧🇷",
     "Paraguay 🇵🇾",
     "Morocco 🇲🇦",
-    "Norway 🇳🇴"
+    "Norway 🇳🇴",
+    "France 🇫🇷"
   ],
   "champion": ""
 }
