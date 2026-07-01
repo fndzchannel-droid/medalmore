@@ -1,19 +1,8 @@
 {
-  "updated": "2026-07-01T00:05:00Z",
+  "updated": "2026-07-01T02:50:25Z",
   "stage": "Round of 32",
-  "headline": "Round of 32 Knockouts Underway",
+  "headline": "Round of 32 — Last 16 Taking Shape",
   "results": [
-    {
-      "date": "Mon Jun 29",
-      "home": "Brazil",
-      "hf": "🇧🇷",
-      "hs": 2,
-      "as": 1,
-      "away": "Japan",
-      "af": "🇯🇵",
-      "venue": "NRG Stadium, Houston",
-      "note": "Martinelli winner in stoppage time"
-    },
     {
       "date": "Mon Jun 29",
       "home": "Germany",
@@ -57,27 +46,27 @@
       "af": "🇸🇪",
       "venue": "MetLife Stadium, NJ",
       "note": "Mbappe brace"
+    },
+    {
+      "date": "Tue Jun 30",
+      "home": "Mexico",
+      "hf": "🇲🇽",
+      "hs": 2,
+      "as": 0,
+      "away": "Ecuador",
+      "af": "🇪🇨",
+      "venue": "Estadio Azteca, Mexico City",
+      "note": "Quinones & Jimenez"
     }
   ],
   "fixtures": [
-    {
-      "date": "Tue Jun 30",
-      "et": "9:00 PM ET",
-      "ist": "6:30 AM IST (Jul 1)",
-      "gmt": "1:00 AM GMT (Jul 1)",
-      "home": "Mexico",
-      "hf": "🇲🇽",
-      "away": "Ecuador",
-      "af": "🇪🇨",
-      "venue": "Estadio Azteca, Mexico City"
-    },
     {
       "date": "Wed Jul 1",
       "et": "12:00 PM ET",
       "ist": "9:30 PM IST",
       "gmt": "4:00 PM GMT",
       "home": "England",
-      "hf": "🏴",
+      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "away": "DR Congo",
       "af": "🇨🇩",
       "venue": "Mercedes-Benz Stadium, Atlanta"
@@ -92,6 +81,17 @@
       "away": "Senegal",
       "af": "🇸🇳",
       "venue": "Lumen Field, Seattle"
+    },
+    {
+      "date": "Wed Jul 1",
+      "et": "8:00 PM ET",
+      "ist": "5:30 AM IST (Jul 2)",
+      "gmt": "12:00 AM GMT (Jul 2)",
+      "home": "United States",
+      "hf": "🇺🇸",
+      "away": "Bosnia & Herz.",
+      "af": "🇧🇦",
+      "venue": "Levi's Stadium, San Francisco Bay"
     }
   ],
   "schedule": [
@@ -159,11 +159,11 @@
       "date": "Tue Jun 30",
       "home": "Mexico",
       "hf": "🇲🇽",
-      "score": "—",
+      "score": "2–0",
       "away": "Ecuador",
       "af": "🇪🇨",
       "venue": "Estadio Azteca, Mexico City",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Wed Jul 1",
@@ -262,7 +262,8 @@
     "Paraguay 🇵🇾",
     "Morocco 🇲🇦",
     "Norway 🇳🇴",
-    "France 🇫🇷"
+    "France 🇫🇷",
+    "Mexico 🇲🇽"
   ],
   "champion": ""
 }
