@@ -1,8 +1,30 @@
 {
-  "updated": "2026-07-01T20:34:28Z",
+  "updated": "2026-07-02T14:49:58Z",
   "stage": "Round of 32",
-  "headline": "Round of 32 — England edge DR Congo 2-1; Senegal lead Belgium as USA-Bosnia close the day",
+  "headline": "Round of 32 — Belgium stun Senegal 3-2 in extra time; USA beat Bosnia to reach last 16",
   "results": [
+    {
+      "date": "Wed Jul 1",
+      "home": "Belgium",
+      "hf": "🇧🇪",
+      "hs": 3,
+      "as": 2,
+      "away": "Senegal",
+      "af": "🇸🇳",
+      "venue": "Lumen Field, Seattle",
+      "note": "AET; Belgium fought back from 2-0"
+    },
+    {
+      "date": "Wed Jul 1",
+      "home": "United States",
+      "hf": "🇺🇸",
+      "hs": 2,
+      "as": 0,
+      "away": "Bosnia & Herz.",
+      "af": "🇧🇦",
+      "venue": "Levi's Stadium, San Francisco Bay",
+      "note": "Balogun, Tillman"
+    },
     {
       "date": "Wed Jul 1",
       "home": "England",
@@ -35,42 +57,9 @@
       "af": "🇪🇨",
       "venue": "Estadio Azteca, Mexico City",
       "note": ""
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "Ivory Coast",
-      "hf": "🇨🇮",
-      "hs": 1,
-      "as": 2,
-      "away": "Norway",
-      "af": "🇳🇴",
-      "venue": "AT&T Stadium, Dallas",
-      "note": "Haaland winner 86'"
-    },
-    {
-      "date": "Mon Jun 29",
-      "home": "Netherlands",
-      "hf": "🇳🇱",
-      "hs": 1,
-      "as": 1,
-      "away": "Morocco",
-      "af": "🇲🇦",
-      "venue": "Estadio BBVA, Monterrey",
-      "note": "Morocco win 3-2 on penalties"
     }
   ],
   "fixtures": [
-    {
-      "date": "Wed Jul 1",
-      "et": "8:00 PM ET",
-      "ist": "5:30 AM IST (Jul 2)",
-      "gmt": "12:00 AM GMT (Jul 2)",
-      "home": "United States",
-      "hf": "🇺🇸",
-      "away": "Bosnia & Herz.",
-      "af": "🇧🇦",
-      "venue": "Levi's Stadium, San Francisco Bay"
-    },
     {
       "date": "Thu Jul 2",
       "et": "3:00 PM ET",
@@ -92,6 +81,17 @@
       "away": "Croatia",
       "af": "🇭🇷",
       "venue": "BMO Field, Toronto"
+    },
+    {
+      "date": "Thu Jul 2",
+      "et": "11:00 PM ET",
+      "ist": "8:30 AM IST (Jul 3)",
+      "gmt": "3:00 AM GMT (Jul 3)",
+      "home": "Switzerland",
+      "hf": "🇨🇭",
+      "away": "Algeria",
+      "af": "🇩🇿",
+      "venue": "BC Place, Vancouver"
     }
   ],
   "schedule": [
@@ -169,21 +169,21 @@
       "date": "Wed Jul 1",
       "home": "Belgium",
       "hf": "🇧🇪",
-      "score": "—",
+      "score": "3–2 (AET)",
       "away": "Senegal",
       "af": "🇸🇳",
       "venue": "Lumen Field, Seattle",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Wed Jul 1",
       "home": "United States",
       "hf": "🇺🇸",
-      "score": "—",
+      "score": "2–0",
       "away": "Bosnia & Herz.",
       "af": "🇧🇦",
       "venue": "Levi's Stadium, San Francisco",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Thu Jul 2",
@@ -254,7 +254,9 @@
     "Norway 🇳🇴",
     "France 🇫🇷",
     "Mexico 🇲🇽",
-    "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "Belgium 🇧🇪",
+    "United States 🇺🇸"
   ],
   "champion": ""
 }
