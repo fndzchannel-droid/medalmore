@@ -1,8 +1,30 @@
 {
-  "updated": "2026-07-02T18:34:19Z",
+  "updated": "2026-07-03T07:06:17Z",
   "stage": "Round of 32",
-  "headline": "Round of 32 — Belgium stun Senegal 3-2 in extra time; USA beat Bosnia to reach last 16",
+  "headline": "Round of 32 nears its end — Spain rout Austria, Ronaldo & Ramos sink Croatia; Argentina and Colombia in action Friday",
   "results": [
+    {
+      "date": "Thu Jul 2",
+      "home": "Portugal",
+      "hf": "🇵🇹",
+      "hs": 2,
+      "as": 1,
+      "away": "Croatia",
+      "af": "🇭🇷",
+      "venue": "BMO Field, Toronto",
+      "note": "Ramos 90+4' header; Ronaldo pen"
+    },
+    {
+      "date": "Thu Jul 2",
+      "home": "Spain",
+      "hf": "🇪🇸",
+      "hs": 3,
+      "as": 0,
+      "away": "Austria",
+      "af": "🇦🇹",
+      "venue": "SoFi Stadium, LA",
+      "note": "Oyarzabal 2, Porro"
+    },
     {
       "date": "Wed Jul 1",
       "home": "Belgium",
@@ -35,63 +57,41 @@
       "af": "🇨🇩",
       "venue": "Mercedes-Benz Stadium, Atlanta",
       "note": "Kane 75', 86'"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "France",
-      "hf": "🇫🇷",
-      "hs": 3,
-      "as": 0,
-      "away": "Sweden",
-      "af": "🇸🇪",
-      "venue": "MetLife Stadium, NJ",
-      "note": "Mbappe brace"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "Mexico",
-      "hf": "🇲🇽",
-      "hs": 2,
-      "as": 0,
-      "away": "Ecuador",
-      "af": "🇪🇨",
-      "venue": "Estadio Azteca, Mexico City",
-      "note": ""
     }
   ],
   "fixtures": [
     {
-      "date": "Thu Jul 2",
-      "et": "3:00 PM ET",
-      "ist": "12:30 AM IST (Jul 3)",
-      "gmt": "7:00 PM GMT",
-      "home": "Spain",
-      "hf": "🇪🇸",
-      "away": "Austria",
-      "af": "🇦🇹",
-      "venue": "SoFi Stadium, LA"
+      "date": "Fri Jul 3",
+      "et": "2:00 PM ET",
+      "ist": "11:30 PM IST",
+      "gmt": "6:00 PM GMT",
+      "home": "Australia",
+      "hf": "🇦🇺",
+      "away": "Egypt",
+      "af": "🇪🇬",
+      "venue": "AT&T Stadium, Dallas"
     },
     {
-      "date": "Thu Jul 2",
-      "et": "7:00 PM ET",
-      "ist": "4:30 AM IST (Jul 3)",
-      "gmt": "11:00 PM GMT",
-      "home": "Portugal",
-      "hf": "🇵🇹",
-      "away": "Croatia",
-      "af": "🇭🇷",
-      "venue": "BMO Field, Toronto"
+      "date": "Fri Jul 3",
+      "et": "6:00 PM ET",
+      "ist": "3:30 AM IST (Jul 4)",
+      "gmt": "10:00 PM GMT",
+      "home": "Argentina",
+      "hf": "🇦🇷",
+      "away": "Cape Verde",
+      "af": "🇨🇻",
+      "venue": "Hard Rock Stadium, Miami"
     },
     {
-      "date": "Thu Jul 2",
-      "et": "11:00 PM ET",
-      "ist": "8:30 AM IST (Jul 3)",
-      "gmt": "3:00 AM GMT (Jul 3)",
-      "home": "Switzerland",
-      "hf": "🇨🇭",
-      "away": "Algeria",
-      "af": "🇩🇿",
-      "venue": "BC Place, Vancouver"
+      "date": "Fri Jul 3",
+      "et": "9:30 PM ET",
+      "ist": "7:00 AM IST (Jul 4)",
+      "gmt": "1:30 AM GMT (Jul 4)",
+      "home": "Colombia",
+      "hf": "🇨🇴",
+      "away": "Ghana",
+      "af": "🇬🇭",
+      "venue": "Arrowhead Stadium, Kansas City"
     }
   ],
   "schedule": [
@@ -189,31 +189,31 @@
       "date": "Thu Jul 2",
       "home": "Spain",
       "hf": "🇪🇸",
-      "score": "—",
+      "score": "3–0",
       "away": "Austria",
       "af": "🇦🇹",
       "venue": "SoFi Stadium, LA",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Thu Jul 2",
       "home": "Portugal",
       "hf": "🇵🇹",
-      "score": "—",
+      "score": "2–1",
       "away": "Croatia",
       "af": "🇭🇷",
       "venue": "BMO Field, Toronto",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Thu Jul 2",
       "home": "Switzerland",
       "hf": "🇨🇭",
-      "score": "—",
+      "score": "LIVE",
       "away": "Algeria",
       "af": "🇩🇿",
       "venue": "BC Place, Vancouver",
-      "status": "NS"
+      "status": "LIVE"
     },
     {
       "date": "Fri Jul 3",
@@ -256,7 +256,9 @@
     "Mexico 🇲🇽",
     "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "Belgium 🇧🇪",
-    "United States 🇺🇸"
+    "United States 🇺🇸",
+    "Spain 🇪🇸",
+    "Portugal 🇵🇹"
   ],
   "champion": ""
 }
