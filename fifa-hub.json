@@ -1,8 +1,19 @@
 {
-  "updated": "2026-07-03T07:06:17Z",
-  "stage": "Round of 32",
-  "headline": "Round of 32 nears its end — Spain rout Austria, Ronaldo & Ramos sink Croatia; Argentina and Colombia in action Friday",
+  "updated": "2026-07-03T18:32:00Z",
+  "stage": "Round of 32 (final day)",
+  "headline": "Round of 32 wraps up Friday — Switzerland edge Algeria; Argentina, Colombia in last-32 action before Round of 16 begins Saturday",
   "results": [
+    {
+      "date": "Thu Jul 2",
+      "home": "Switzerland",
+      "hf": "🇨🇭",
+      "hs": 2,
+      "as": 0,
+      "away": "Algeria",
+      "af": "🇩🇿",
+      "venue": "BC Place, Vancouver",
+      "note": "Embolo, Ndoye; first WC knockout win in 88 yrs"
+    },
     {
       "date": "Thu Jul 2",
       "home": "Portugal",
@@ -44,33 +55,11 @@
       "as": 0,
       "away": "Bosnia & Herz.",
       "af": "🇧🇦",
-      "venue": "Levi's Stadium, San Francisco Bay",
+      "venue": "Levi's Stadium, San Francisco",
       "note": "Balogun, Tillman"
-    },
-    {
-      "date": "Wed Jul 1",
-      "home": "England",
-      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "hs": 2,
-      "as": 1,
-      "away": "DR Congo",
-      "af": "🇨🇩",
-      "venue": "Mercedes-Benz Stadium, Atlanta",
-      "note": "Kane 75', 86'"
     }
   ],
   "fixtures": [
-    {
-      "date": "Fri Jul 3",
-      "et": "2:00 PM ET",
-      "ist": "11:30 PM IST",
-      "gmt": "6:00 PM GMT",
-      "home": "Australia",
-      "hf": "🇦🇺",
-      "away": "Egypt",
-      "af": "🇪🇬",
-      "venue": "AT&T Stadium, Dallas"
-    },
     {
       "date": "Fri Jul 3",
       "et": "6:00 PM ET",
@@ -92,6 +81,17 @@
       "away": "Ghana",
       "af": "🇬🇭",
       "venue": "Arrowhead Stadium, Kansas City"
+    },
+    {
+      "date": "Sat Jul 4",
+      "et": "1:00 PM ET",
+      "ist": "10:30 PM IST",
+      "gmt": "5:00 PM GMT",
+      "home": "Canada",
+      "hf": "🇨🇦",
+      "away": "Morocco",
+      "af": "🇲🇦",
+      "venue": "NRG Stadium, Houston"
     }
   ],
   "schedule": [
@@ -209,21 +209,21 @@
       "date": "Thu Jul 2",
       "home": "Switzerland",
       "hf": "🇨🇭",
-      "score": "LIVE",
+      "score": "2–0",
       "away": "Algeria",
       "af": "🇩🇿",
       "venue": "BC Place, Vancouver",
-      "status": "LIVE"
+      "status": "FT"
     },
     {
       "date": "Fri Jul 3",
       "home": "Australia",
       "hf": "🇦🇺",
-      "score": "—",
+      "score": "LIVE",
       "away": "Egypt",
       "af": "🇪🇬",
       "venue": "AT&T Stadium, Dallas",
-      "status": "NS"
+      "status": "LIVE"
     },
     {
       "date": "Fri Jul 3",
@@ -258,7 +258,8 @@
     "Belgium 🇧🇪",
     "United States 🇺🇸",
     "Spain 🇪🇸",
-    "Portugal 🇵🇹"
+    "Portugal 🇵🇹",
+    "Switzerland 🇨🇭"
   ],
   "champion": ""
 }
