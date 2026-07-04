@@ -1,8 +1,41 @@
 {
-  "updated": "2026-07-03T18:32:00Z",
-  "stage": "Round of 32 (final day)",
-  "headline": "Round of 32 wraps up Friday — Switzerland edge Algeria; Argentina, Colombia in last-32 action before Round of 16 begins Saturday",
+  "updated": "2026-07-04T05:55:00Z",
+  "stage": "Round of 16",
+  "headline": "Round of 32 complete — Argentina, Egypt & Colombia advance; Round of 16 begins Saturday with Canada-Morocco and Paraguay-France",
   "results": [
+    {
+      "date": "Fri Jul 3",
+      "home": "Argentina",
+      "hf": "🇦🇷",
+      "hs": 3,
+      "as": 2,
+      "away": "Cape Verde",
+      "af": "🇨🇻",
+      "venue": "Hard Rock Stadium, Miami",
+      "note": "AET; Messi, L. Martinez, Romero"
+    },
+    {
+      "date": "Fri Jul 3",
+      "home": "Egypt",
+      "hf": "🇪🇬",
+      "hs": 1,
+      "as": 1,
+      "away": "Australia",
+      "af": "🇦🇺",
+      "venue": "AT&T Stadium, Dallas",
+      "note": "Egypt won 4-2 on penalties; Salah Panenka; first-ever last 16"
+    },
+    {
+      "date": "Fri Jul 3",
+      "home": "Colombia",
+      "hf": "🇨🇴",
+      "hs": 1,
+      "as": 0,
+      "away": "Ghana",
+      "af": "🇬🇭",
+      "venue": "Arrowhead Stadium, Kansas City",
+      "note": "Jhon Arias 14'"
+    },
     {
       "date": "Thu Jul 2",
       "home": "Switzerland",
@@ -16,17 +49,6 @@
     },
     {
       "date": "Thu Jul 2",
-      "home": "Portugal",
-      "hf": "🇵🇹",
-      "hs": 2,
-      "as": 1,
-      "away": "Croatia",
-      "af": "🇭🇷",
-      "venue": "BMO Field, Toronto",
-      "note": "Ramos 90+4' header; Ronaldo pen"
-    },
-    {
-      "date": "Thu Jul 2",
       "home": "Spain",
       "hf": "🇪🇸",
       "hs": 3,
@@ -35,53 +57,9 @@
       "af": "🇦🇹",
       "venue": "SoFi Stadium, LA",
       "note": "Oyarzabal 2, Porro"
-    },
-    {
-      "date": "Wed Jul 1",
-      "home": "Belgium",
-      "hf": "🇧🇪",
-      "hs": 3,
-      "as": 2,
-      "away": "Senegal",
-      "af": "🇸🇳",
-      "venue": "Lumen Field, Seattle",
-      "note": "AET; Belgium fought back from 2-0"
-    },
-    {
-      "date": "Wed Jul 1",
-      "home": "United States",
-      "hf": "🇺🇸",
-      "hs": 2,
-      "as": 0,
-      "away": "Bosnia & Herz.",
-      "af": "🇧🇦",
-      "venue": "Levi's Stadium, San Francisco",
-      "note": "Balogun, Tillman"
     }
   ],
   "fixtures": [
-    {
-      "date": "Fri Jul 3",
-      "et": "6:00 PM ET",
-      "ist": "3:30 AM IST (Jul 4)",
-      "gmt": "10:00 PM GMT",
-      "home": "Argentina",
-      "hf": "🇦🇷",
-      "away": "Cape Verde",
-      "af": "🇨🇻",
-      "venue": "Hard Rock Stadium, Miami"
-    },
-    {
-      "date": "Fri Jul 3",
-      "et": "9:30 PM ET",
-      "ist": "7:00 AM IST (Jul 4)",
-      "gmt": "1:30 AM GMT (Jul 4)",
-      "home": "Colombia",
-      "hf": "🇨🇴",
-      "away": "Ghana",
-      "af": "🇬🇭",
-      "venue": "Arrowhead Stadium, Kansas City"
-    },
     {
       "date": "Sat Jul 4",
       "et": "1:00 PM ET",
@@ -92,174 +70,129 @@
       "away": "Morocco",
       "af": "🇲🇦",
       "venue": "NRG Stadium, Houston"
+    },
+    {
+      "date": "Sat Jul 4",
+      "et": "5:00 PM ET",
+      "ist": "2:30 AM IST (Jul 5)",
+      "gmt": "9:00 PM GMT",
+      "home": "Paraguay",
+      "hf": "🇵🇾",
+      "away": "France",
+      "af": "🇫🇷",
+      "venue": "Lincoln Financial Field, Philadelphia"
+    },
+    {
+      "date": "Sun Jul 5",
+      "et": "4:00 PM ET",
+      "ist": "1:30 AM IST (Jul 6)",
+      "gmt": "8:00 PM GMT",
+      "home": "Brazil",
+      "hf": "🇧🇷",
+      "away": "Norway",
+      "af": "🇳🇴",
+      "venue": "MetLife Stadium, NY/NJ"
     }
   ],
   "schedule": [
     {
-      "date": "Mon Jun 29",
-      "home": "Brazil",
-      "hf": "🇧🇷",
-      "score": "2–1",
-      "away": "Japan",
-      "af": "🇯🇵",
-      "venue": "NRG Stadium, Houston",
-      "status": "FT"
-    },
-    {
-      "date": "Mon Jun 29",
-      "home": "Germany",
-      "hf": "🇩🇪",
-      "score": "1–1 (3–4p)",
-      "away": "Paraguay",
-      "af": "🇵🇾",
-      "venue": "Gillette Stadium, Boston",
-      "status": "FT"
-    },
-    {
-      "date": "Mon Jun 29",
-      "home": "Netherlands",
-      "hf": "🇳🇱",
-      "score": "1–1 (2–3p)",
+      "date": "Sat Jul 4",
+      "home": "Canada",
+      "hf": "🇨🇦",
+      "score": "—",
       "away": "Morocco",
       "af": "🇲🇦",
-      "venue": "Estadio BBVA, Monterrey",
-      "status": "FT"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "Ivory Coast",
-      "hf": "🇨🇮",
-      "score": "1–2",
-      "away": "Norway",
-      "af": "🇳🇴",
-      "venue": "AT&T Stadium, Dallas",
-      "status": "FT"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "France",
-      "hf": "🇫🇷",
-      "score": "3–0",
-      "away": "Sweden",
-      "af": "🇸🇪",
-      "venue": "MetLife Stadium, NJ",
-      "status": "FT"
-    },
-    {
-      "date": "Tue Jun 30",
-      "home": "Mexico",
-      "hf": "🇲🇽",
-      "score": "2–0",
-      "away": "Ecuador",
-      "af": "🇪🇨",
-      "venue": "Estadio Azteca, Mexico City",
-      "status": "FT"
-    },
-    {
-      "date": "Wed Jul 1",
-      "home": "England",
-      "hf": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "score": "2–1",
-      "away": "DR Congo",
-      "af": "🇨🇩",
-      "venue": "Mercedes-Benz Stadium, Atlanta",
-      "status": "FT"
-    },
-    {
-      "date": "Wed Jul 1",
-      "home": "Belgium",
-      "hf": "🇧🇪",
-      "score": "3–2 (AET)",
-      "away": "Senegal",
-      "af": "🇸🇳",
-      "venue": "Lumen Field, Seattle",
-      "status": "FT"
-    },
-    {
-      "date": "Wed Jul 1",
-      "home": "United States",
-      "hf": "🇺🇸",
-      "score": "2–0",
-      "away": "Bosnia & Herz.",
-      "af": "🇧🇦",
-      "venue": "Levi's Stadium, San Francisco",
-      "status": "FT"
-    },
-    {
-      "date": "Thu Jul 2",
-      "home": "Spain",
-      "hf": "🇪🇸",
-      "score": "3–0",
-      "away": "Austria",
-      "af": "🇦🇹",
-      "venue": "SoFi Stadium, LA",
-      "status": "FT"
-    },
-    {
-      "date": "Thu Jul 2",
-      "home": "Portugal",
-      "hf": "🇵🇹",
-      "score": "2–1",
-      "away": "Croatia",
-      "af": "🇭🇷",
-      "venue": "BMO Field, Toronto",
-      "status": "FT"
-    },
-    {
-      "date": "Thu Jul 2",
-      "home": "Switzerland",
-      "hf": "🇨🇭",
-      "score": "2–0",
-      "away": "Algeria",
-      "af": "🇩🇿",
-      "venue": "BC Place, Vancouver",
-      "status": "FT"
-    },
-    {
-      "date": "Fri Jul 3",
-      "home": "Australia",
-      "hf": "🇦🇺",
-      "score": "LIVE",
-      "away": "Egypt",
-      "af": "🇪🇬",
-      "venue": "AT&T Stadium, Dallas",
-      "status": "LIVE"
-    },
-    {
-      "date": "Fri Jul 3",
-      "home": "Argentina",
-      "hf": "🇦🇷",
-      "score": "—",
-      "away": "Cape Verde",
-      "af": "🇨🇻",
-      "venue": "Hard Rock Stadium, Miami",
+      "venue": "NRG Stadium, Houston",
       "status": "NS"
     },
     {
-      "date": "Fri Jul 3",
-      "home": "Colombia",
-      "hf": "🇨🇴",
+      "date": "Sat Jul 4",
+      "home": "Paraguay",
+      "hf": "🇵🇾",
       "score": "—",
-      "away": "Ghana",
-      "af": "🇬🇭",
-      "venue": "Arrowhead Stadium, Kansas City",
+      "away": "France",
+      "af": "🇫🇷",
+      "venue": "Lincoln Financial Field, Philadelphia",
+      "status": "NS"
+    },
+    {
+      "date": "Sun Jul 5",
+      "home": "Brazil",
+      "hf": "🇧🇷",
+      "score": "—",
+      "away": "Norway",
+      "af": "🇳🇴",
+      "venue": "MetLife Stadium, NY/NJ",
+      "status": "NS"
+    },
+    {
+      "date": "Sun Jul 5",
+      "home": "Mexico",
+      "hf": "🇲🇽",
+      "score": "—",
+      "away": "England",
+      "af": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "venue": "Estadio Azteca, Mexico City",
+      "status": "NS"
+    },
+    {
+      "date": "Mon Jul 6",
+      "home": "Portugal",
+      "hf": "🇵🇹",
+      "score": "—",
+      "away": "Spain",
+      "af": "🇪🇸",
+      "venue": "AT&T Stadium, Dallas",
+      "status": "NS"
+    },
+    {
+      "date": "Mon Jul 6",
+      "home": "United States",
+      "hf": "🇺🇸",
+      "score": "—",
+      "away": "Belgium",
+      "af": "🇧🇪",
+      "venue": "Lumen Field, Seattle",
+      "status": "NS"
+    },
+    {
+      "date": "Tue Jul 7",
+      "home": "Argentina",
+      "hf": "🇦🇷",
+      "score": "—",
+      "away": "Egypt",
+      "af": "🇪🇬",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
+      "status": "NS"
+    },
+    {
+      "date": "Tue Jul 7",
+      "home": "Switzerland",
+      "hf": "🇨🇭",
+      "score": "—",
+      "away": "Colombia",
+      "af": "🇨🇴",
+      "venue": "BC Place, Vancouver",
       "status": "NS"
     }
   ],
   "through": [
     "Canada 🇨🇦",
-    "Brazil 🇧🇷",
-    "Paraguay 🇵🇾",
     "Morocco 🇲🇦",
-    "Norway 🇳🇴",
+    "Paraguay 🇵🇾",
     "France 🇫🇷",
+    "Brazil 🇧🇷",
+    "Norway 🇳🇴",
     "Mexico 🇲🇽",
     "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "Belgium 🇧🇪",
-    "United States 🇺🇸",
-    "Spain 🇪🇸",
     "Portugal 🇵🇹",
-    "Switzerland 🇨🇭"
+    "Spain 🇪🇸",
+    "United States 🇺🇸",
+    "Belgium 🇧🇪",
+    "Argentina 🇦🇷",
+    "Egypt 🇪🇬",
+    "Switzerland 🇨🇭",
+    "Colombia 🇨🇴"
   ],
   "champion": ""
 }
