@@ -761,7 +761,7 @@ function renderPostsTable(){
       <td class="post-title-cell">${escHtml(p.title)||'(Untitled)'}<p>/${escHtml(p.slug||'')}</p></td>
       <td>${statusBadge(p.status)}${p.status==='scheduled'?`<br><span style="font-size:.75rem;color:var(--blue);margin-top:3px;display:block">${fmtDate(p.scheduleTime)}</span>`:''}</td>
       <td style="color:var(--text2)">${escHtml(p.category||'—')}</td>
-      <td style="color:var(--text2)">Admin</td>
+      <td style="color:var(--text2)">medalandmore</td>
       <td style="color:var(--text3);font-size:.8125rem;white-space:nowrap">${fmtDate(p.updatedAt)}</td>
       <td><div class="action-btns">
         ${p.status==='published'?`<a href="/blog.html#${p.id}" target="_blank" class="btn btn-outline btn-sm">View</a>`:''}
