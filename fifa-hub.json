@@ -1,18 +1,29 @@
 {
-  "updated": "2026-07-05T03:33:52Z",
+  "updated": "2026-07-06T05:15:36Z",
   "stage": "Round of 16",
-  "headline": "Morocco and France reach the quarter-finals; Brazil-Norway & Mexico-England close the Round of 16 today.",
+  "headline": "Round of 16 underway — Morocco, France, Norway & England reach the quarters; Portugal-Spain and USA-Belgium play Monday",
   "results": [
     {
-      "date": "Sat Jul 4",
-      "home": "Canada",
-      "hf": "🇨🇦",
-      "hs": 0,
+      "date": "Sun Jul 5",
+      "home": "Mexico",
+      "hf": "🇲🇽",
+      "hs": 2,
       "as": 3,
-      "away": "Morocco",
-      "af": "🇲🇦",
-      "venue": "NRG Stadium, Houston",
-      "note": "Ounahi brace; Morocco reach QF"
+      "away": "England",
+      "af": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "venue": "Estadio Azteca, Mexico City",
+      "note": "Bellingham 2, Kane pen"
+    },
+    {
+      "date": "Sun Jul 5",
+      "home": "Brazil",
+      "hf": "🇧🇷",
+      "hs": 1,
+      "as": 2,
+      "away": "Norway",
+      "af": "🇳🇴",
+      "venue": "MetLife Stadium, NY/NJ",
+      "note": "Haaland brace"
     },
     {
       "date": "Sat Jul 4",
@@ -23,7 +34,18 @@
       "away": "France",
       "af": "🇫🇷",
       "venue": "Lincoln Financial Field, Philadelphia",
-      "note": "Mbappé pen 70'; France reach QF"
+      "note": "Mbappe 7th of tournament"
+    },
+    {
+      "date": "Sat Jul 4",
+      "home": "Canada",
+      "hf": "🇨🇦",
+      "hs": 0,
+      "as": 3,
+      "away": "Morocco",
+      "af": "🇲🇦",
+      "venue": "NRG Stadium, Houston",
+      "note": ""
     },
     {
       "date": "Fri Jul 3",
@@ -34,64 +56,42 @@
       "away": "Cape Verde",
       "af": "🇨🇻",
       "venue": "Hard Rock Stadium, Miami",
-      "note": "AET; Messi, L. Martinez, Romero"
-    },
-    {
-      "date": "Fri Jul 3",
-      "home": "Egypt",
-      "hf": "🇪🇬",
-      "hs": 1,
-      "as": 1,
-      "away": "Australia",
-      "af": "🇦🇺",
-      "venue": "AT&T Stadium, Dallas",
-      "note": "Egypt won 4-2 on penalties; Salah Panenka; first-ever last 16"
-    },
-    {
-      "date": "Fri Jul 3",
-      "home": "Colombia",
-      "hf": "🇨🇴",
-      "hs": 1,
-      "as": 0,
-      "away": "Ghana",
-      "af": "🇬🇭",
-      "venue": "Arrowhead Stadium, Kansas City",
-      "note": "Jhon Arias 14'"
+      "note": "AET; Messi's 20th career WC goal"
     }
   ],
   "fixtures": [
     {
-      "date": "Sun Jul 5",
-      "et": "4:00 PM ET",
-      "ist": "1:30 AM IST (Jul 6)",
-      "gmt": "8:00 PM GMT",
-      "home": "Brazil",
-      "hf": "🇧🇷",
-      "away": "Norway",
-      "af": "🇳🇴",
-      "venue": "MetLife Stadium, NY/NJ"
-    },
-    {
-      "date": "Sun Jul 5",
-      "et": "8:00 PM ET",
-      "ist": "5:30 AM IST (Jul 6)",
-      "gmt": "12:00 AM GMT",
-      "home": "Mexico",
-      "hf": "🇲🇽",
-      "away": "England",
-      "af": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "venue": "Estadio Azteca, Mexico City"
-    },
-    {
       "date": "Mon Jul 6",
       "et": "3:00 PM ET",
       "ist": "12:30 AM IST (Jul 7)",
-      "gmt": "7:00 PM GMT",
+      "gmt": "8:00 PM GMT",
       "home": "Portugal",
       "hf": "🇵🇹",
       "away": "Spain",
       "af": "🇪🇸",
       "venue": "AT&T Stadium, Dallas"
+    },
+    {
+      "date": "Mon Jul 6",
+      "et": "8:00 PM ET",
+      "ist": "5:30 AM IST (Jul 7)",
+      "gmt": "1:00 AM GMT (Jul 7)",
+      "home": "United States",
+      "hf": "🇺🇸",
+      "away": "Belgium",
+      "af": "🇧🇪",
+      "venue": "Lumen Field, Seattle"
+    },
+    {
+      "date": "Tue Jul 7",
+      "et": "12:00 PM ET",
+      "ist": "9:30 PM IST",
+      "gmt": "5:00 PM GMT",
+      "home": "Argentina",
+      "hf": "🇦🇷",
+      "away": "Egypt",
+      "af": "🇪🇬",
+      "venue": "Mercedes-Benz Stadium, Atlanta"
     }
   ],
   "schedule": [
@@ -119,21 +119,21 @@
       "date": "Sun Jul 5",
       "home": "Brazil",
       "hf": "🇧🇷",
-      "score": "—",
+      "score": "1–2",
       "away": "Norway",
       "af": "🇳🇴",
       "venue": "MetLife Stadium, NY/NJ",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Sun Jul 5",
       "home": "Mexico",
       "hf": "🇲🇽",
-      "score": "—",
+      "score": "2–3",
       "away": "England",
       "af": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "venue": "Estadio Azteca, Mexico City",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Mon Jul 6",
@@ -179,9 +179,7 @@
   "through": [
     "Morocco 🇲🇦",
     "France 🇫🇷",
-    "Brazil 🇧🇷",
     "Norway 🇳🇴",
-    "Mexico 🇲🇽",
     "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "Portugal 🇵🇹",
     "Spain 🇪🇸",
