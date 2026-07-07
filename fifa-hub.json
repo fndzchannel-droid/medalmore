@@ -1,8 +1,30 @@
 {
-  "updated": "2026-07-06T05:15:36Z",
+  "updated": "2026-07-07T17:04:38Z",
   "stage": "Round of 16",
-  "headline": "Round of 16 underway — Morocco, France, Norway & England reach the quarters; Portugal-Spain and USA-Belgium play Monday",
+  "headline": "Round of 16 nearly complete — Spain oust Portugal, Belgium beat USA; Argentina-Egypt live, Switzerland-Colombia to come",
   "results": [
+    {
+      "date": "Mon Jul 6",
+      "home": "Portugal",
+      "hf": "🇵🇹",
+      "hs": 0,
+      "as": 1,
+      "away": "Spain",
+      "af": "🇪🇸",
+      "venue": "AT&T Stadium, Dallas",
+      "note": "Merino late winner; Ronaldo's final WC game"
+    },
+    {
+      "date": "Mon Jul 6",
+      "home": "United States",
+      "hf": "🇺🇸",
+      "hs": 1,
+      "as": 4,
+      "away": "Belgium",
+      "af": "🇧🇪",
+      "venue": "Lumen Field, Seattle",
+      "note": "Hosts eliminated"
+    },
     {
       "date": "Sun Jul 5",
       "home": "Mexico",
@@ -35,63 +57,41 @@
       "af": "🇫🇷",
       "venue": "Lincoln Financial Field, Philadelphia",
       "note": "Mbappe 7th of tournament"
-    },
-    {
-      "date": "Sat Jul 4",
-      "home": "Canada",
-      "hf": "🇨🇦",
-      "hs": 0,
-      "as": 3,
-      "away": "Morocco",
-      "af": "🇲🇦",
-      "venue": "NRG Stadium, Houston",
-      "note": ""
-    },
-    {
-      "date": "Fri Jul 3",
-      "home": "Argentina",
-      "hf": "🇦🇷",
-      "hs": 3,
-      "as": 2,
-      "away": "Cape Verde",
-      "af": "🇨🇻",
-      "venue": "Hard Rock Stadium, Miami",
-      "note": "AET; Messi's 20th career WC goal"
     }
   ],
   "fixtures": [
     {
-      "date": "Mon Jul 6",
-      "et": "3:00 PM ET",
-      "ist": "12:30 AM IST (Jul 7)",
-      "gmt": "8:00 PM GMT",
-      "home": "Portugal",
-      "hf": "🇵🇹",
-      "away": "Spain",
-      "af": "🇪🇸",
-      "venue": "AT&T Stadium, Dallas"
+      "date": "Tue Jul 7",
+      "et": "4:00 PM ET",
+      "ist": "1:30 AM IST (Jul 8)",
+      "gmt": "9:00 PM GMT",
+      "home": "Switzerland",
+      "hf": "🇨🇭",
+      "away": "Colombia",
+      "af": "🇨🇴",
+      "venue": "BC Place, Vancouver"
     },
     {
-      "date": "Mon Jul 6",
-      "et": "8:00 PM ET",
-      "ist": "5:30 AM IST (Jul 7)",
-      "gmt": "1:00 AM GMT (Jul 7)",
-      "home": "United States",
-      "hf": "🇺🇸",
+      "date": "Thu Jul 9",
+      "et": "TBD",
+      "ist": "TBD",
+      "gmt": "TBD",
+      "home": "France",
+      "hf": "🇫🇷",
+      "away": "Morocco",
+      "af": "🇲🇦",
+      "venue": "Quarter-final — USA"
+    },
+    {
+      "date": "Fri Jul 10",
+      "et": "3:00 PM ET",
+      "ist": "12:30 AM IST (Jul 11)",
+      "gmt": "8:00 PM GMT",
+      "home": "Spain",
+      "hf": "🇪🇸",
       "away": "Belgium",
       "af": "🇧🇪",
-      "venue": "Lumen Field, Seattle"
-    },
-    {
-      "date": "Tue Jul 7",
-      "et": "12:00 PM ET",
-      "ist": "9:30 PM IST",
-      "gmt": "5:00 PM GMT",
-      "home": "Argentina",
-      "hf": "🇦🇷",
-      "away": "Egypt",
-      "af": "🇪🇬",
-      "venue": "Mercedes-Benz Stadium, Atlanta"
+      "venue": "Los Angeles Stadium"
     }
   ],
   "schedule": [
@@ -139,21 +139,21 @@
       "date": "Mon Jul 6",
       "home": "Portugal",
       "hf": "🇵🇹",
-      "score": "—",
+      "score": "0–1",
       "away": "Spain",
       "af": "🇪🇸",
       "venue": "AT&T Stadium, Dallas",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Mon Jul 6",
       "home": "United States",
       "hf": "🇺🇸",
-      "score": "—",
+      "score": "1–4",
       "away": "Belgium",
       "af": "🇧🇪",
       "venue": "Lumen Field, Seattle",
-      "status": "NS"
+      "status": "FT"
     },
     {
       "date": "Tue Jul 7",
@@ -177,18 +177,12 @@
     }
   ],
   "through": [
-    "Morocco 🇲🇦",
     "France 🇫🇷",
+    "Morocco 🇲🇦",
     "Norway 🇳🇴",
     "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "Portugal 🇵🇹",
     "Spain 🇪🇸",
-    "United States 🇺🇸",
-    "Belgium 🇧🇪",
-    "Argentina 🇦🇷",
-    "Egypt 🇪🇬",
-    "Switzerland 🇨🇭",
-    "Colombia 🇨🇴"
+    "Belgium 🇧🇪"
   ],
   "champion": ""
 }
